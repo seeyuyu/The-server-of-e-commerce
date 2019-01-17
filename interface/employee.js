@@ -116,8 +116,15 @@ router.post('/signin',async(ctx,next) =>{
 router.post('/verify',async(ctx,next)=>{
   let username = ctx.request.body.username
   console.log(111111111111111111);
+  console.log(ctx.request.body);
+
   const saveExpire = await Store.hget(`nodemail:${username}`,'expire')
+
+  console.log(`saveExpire is ${saveExpire}`)
   if(saveExpire && new Date().getTime() - saveExpire <0){
+    console.log(`date.gettime is ${new Date().getTime()}`);
+    console.log(`saveExpires  is ${saveExpire}`);
+    
     ctx.body ={
       code:-1,
       msg:'验证请求过于频繁，请于1分钟之后再次尝试'
@@ -140,8 +147,8 @@ router.post('/verify',async(ctx,next)=>{
   let mailOptions = {
     from:`"认证邮件" <${Email.smtp.user}>`,
     to:ko.email,
-    subject:'《慕课网高仿美团网全站实战》注册码',
-    html:`您在《慕课网高仿美团网全栈实战》课程中注册，您的邀请码是${ko.code}`
+    subject:'《杨二狗连锁超市》注册码',
+    html:`您在《杨二狗连锁超市中》注册，您的注册码是${ko.code}，请在一分钟之内填写，如不是您本人，请联系杨二狗18610090645`
   }
   await transporter.sendMail(mailOptions,(error,info) =>{
     if(error) {
