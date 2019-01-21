@@ -12,19 +12,24 @@ const index = require('./routes/index');
 const users = require('./routes/users');
 const firstPage =require('./routes/firstPage');
 import dbConfig from './dbs/config'
-
 import passport from './interface/utils/passport'
 import employee from './interface/employee'
+import cors from 'koa2-cors'
 // error handler
-onerror(app)
+onerror(app);
+// app.use(cors({
+//   origin:'http://localhost:3001',
+//   credentials:true,
+// }))
 
 console.log('123123132313')
 app.keys = ['syy','keyskeys']
 app.proxy =true;
 app.use(session({
   key:'syy',
-  prefix:'see:uid',
-  store: new Redis() 
+  prefix:'syy:uid',
+  store: new Redis(),
+  domain:'/127.0.0.1' 
 }))
 // middlewares
 app.use(bodyparser({
@@ -32,11 +37,12 @@ app.use(bodyparser({
 }))
 
 // 配置路由登录表 
-
 app.use(json())
 mongoose.connect(dbConfig.dbs,{
   useNewUrlParser:true
 })
+// 处理登录相关的
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(logger())

@@ -1,5 +1,5 @@
 import Router from 'koa-router'
-import Redis from "koa-Redis"
+import Redis from "koa-redis"
 import nodemailer from 'nodemailer'
 import Employee from '../dbs/models/employee'
 import Passport from './utils/passport'
@@ -11,6 +11,7 @@ let router = new Router(
     prefix:'/employee'
   }
 )
+
 let Store =new Redis().client
 router.post('/',async(ctx)=>{
   console.log("进来了")
@@ -18,17 +19,20 @@ router.post('/',async(ctx)=>{
     msg:123
   }
 })
-router.post('/register',async (ctx) =>{
+// 注册
+router.post('/register',async (ctx,next) =>{
+  // console.log(ctx.header)
   const {
     username,
     password,
     email,
     code
   } = ctx.request.body;
+  console.log(`?????`)
   if(code){
     const saveCode = await Store.hget(`nodemail:${username}`,'code')
     const saveExpire = await Store.hget(`nodemail:${username}`,'expire')
-    if(code === seveCode){
+    if(code === saveCode){
       if(new Date().getTime() - saveExpire >0){
         ctx.body = {
           code: -1,
@@ -85,10 +89,17 @@ router.post('/register',async (ctx) =>{
         msg:'注册失败'
       }
     }
+  }else{
+    ctx.body ={
+      code: -1,
+      msg:"你没输入验证码"
+    } 
+    return
   }
 })
 
-router.post('/signin',async(ctx,next) =>{
+router.post('/login',async(ctx,next) =>{
+  console.log(ctx.header)
   return Passport.authenticate('local',function (err,user,info,status) {
       if(err){
         ctx.body={
@@ -130,6 +141,11 @@ router.post('/verify',async(ctx,next)=>{
       msg:'验证请求过于频繁，请于1分钟之后再次尝试'
     }
     return false
+  }else{
+    ctx.body ={
+      code:-1,
+      msg:'莫名其妙的问题'
+    }
   }
   let transporter =nodemailer.createTransport({
     service:'qq',

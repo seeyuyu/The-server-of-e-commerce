@@ -15,4 +15,4 @@ const EmployeeSchema =new Schema({
     require:true
   }
 })
-export default mongoose.model('Employee',EmployeeSchema)
+export default mongoose.model('Employee',EmployeeSchema,'employee')
