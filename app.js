@@ -14,6 +14,7 @@ const firstPage =require('./routes/firstPage');
 import dbConfig from './dbs/config'
 import passport from './interface/utils/passport'
 import employee from './interface/employee'
+import commodity from './interface/commodity'
 import cors from 'koa2-cors'
 // error handler
 onerror(app);
@@ -65,6 +66,7 @@ app.use(async (ctx, next) => {
 // app.use(users.routes(), users.allowedMethods())
 // app.use(firstPage.routes(), firstPage.allowedMethods())
 app.use(employee.routes()).use(employee.allowedMethods())
+app.use(commodity.routes()).use(commodity.allowedMethods())
 
 // error-handling
 
