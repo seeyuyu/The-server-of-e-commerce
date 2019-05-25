@@ -6,8 +6,8 @@ passport.use(new LocalStrategy(async function (username,password,done) {
     username
   }
   console.log(`username is ${username}`)
-  let result = await EmployeeModel.findOne(where)
-  console.log(`result.password is ${result.password}`);
+  let result = await EmployeeModel.findOne(where);
+  console.log(`result.password is ${result}`);
   console.log(`password is ${password}`)
   if(result!=null){
     if(result.password === password){

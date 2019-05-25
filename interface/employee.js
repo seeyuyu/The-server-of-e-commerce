@@ -97,7 +97,7 @@ router.post('/register',async (ctx,next) =>{
     return
   }
 })
-
+//登录
 router.post('/login',async(ctx,next) =>{
   console.log(ctx.header)
   return Passport.authenticate('local',function (err,user,info,status) {
@@ -147,6 +147,7 @@ router.post('/verify',async(ctx,next)=>{
       msg:'莫名其妙的问题'
     }
   }
+
   let transporter =nodemailer.createTransport({
     service:'qq',
     auth:{
@@ -154,12 +155,14 @@ router.post('/verify',async(ctx,next)=>{
       pass: Email.smtp.pass
     }
   })
+
   let ko = {
     code : Email.smtp.code(),
     expire:Email.smtp.expire(),
     email:ctx.request.body.email,
     user:ctx.request.body.username
   }
+  
   let mailOptions = {
     from:`"认证邮件" <${Email.smtp.user}>`,
     to:ko.email,
