@@ -1,3 +1,4 @@
+//目前的员工表格
 import mongoose from 'mongoose'
 const Schema =mongoose.Schema
 const EmployeeSchema =new Schema({

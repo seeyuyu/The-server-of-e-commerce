@@ -1,3 +1,4 @@
+//目前的商品表格
 import mongoose from 'mongoose'
 const Schema =mongoose.Schema
 const CommoditySchema =new Schema({
