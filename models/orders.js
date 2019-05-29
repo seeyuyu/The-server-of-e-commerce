@@ -18,16 +18,17 @@ const orderSchema = new Schema(
     //已删除订单，已失效订单，未发货订单，已结束订单，已退货订单
     create_time: { type: String },
     updata_time: { type: String },
-    buyer:{type:String},
+    buyer: { type: String },
     order_commodity: {
       type: [
-        { type: Schema.Types.ObjectId, ref: "Commodity" },
-        { mount: { type: Number, default: 0 } },
+        {
+          commodity_id: { type: Schema.Types.ObjectId, ref: "Commodity" },
+          count: { type: Number, default: 0 }
+        }
       ]
     }
   },
   { timestamps: true }
 );
-
 
 module.exports = model("Order", orderSchema);

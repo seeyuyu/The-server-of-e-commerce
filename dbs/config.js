@@ -13,12 +13,10 @@ export default{
       return 'smtp.qq.com'
     },
     get user(){
-      // return '2474329308@qq.com'
       return '1037796421@qq.com'
-    //  我的这个QQ号，密码是 LDYldy1037796421
     },
     get pass(){
-      // return 'tegsgnlmcekddjba'  //2开头的qq号吗
+      // return 'fitagfwmumxtbbgi'
       return 'ehjtmghvxenrbdad'
 
     },
@@ -33,6 +31,6 @@ export default{
       }
     }
   },
-
+  
 
 }
