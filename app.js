@@ -24,13 +24,16 @@ onerror(app);
 // }))
 
 console.log('123123132313')
+console.log('123123132313')
+
 app.keys = ['syy','keyskeys']
 app.proxy =true;
 app.use(session({
   key:'syy',
-  prefix:'syy:uid',
+    prefix:'syy:uid',
   store: new Redis(),
-  domain:'/127.0.0.1' 
+    // domain:'/127.0.0.1',3
+    domain:'/39.107.68.213' ,
 }))
 // middlewares
 app.use(bodyparser({
@@ -41,6 +44,12 @@ app.use(bodyparser({
 app.use(json())
 mongoose.connect(dbConfig.dbs,{
   useNewUrlParser:true
+},(err) =>{
+  if(err){
+    console.log('mongodb connect error',err);
+  }else {
+    console.log('mongodb connect success ! ');
+  }
 })
 // 处理登录相关的
 
