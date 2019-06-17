@@ -12,3 +12,5 @@ yarn-error.log*
 
 .project
 node_modules/
+
+dbs/config.js
