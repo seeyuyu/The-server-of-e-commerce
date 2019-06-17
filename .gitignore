@@ -9,8 +9,7 @@ yarn-debug
 yarn-error.log*
 
 .idea/
-
+dbs/config.js
 .project
 node_modules/
 
-dbs/config.js
