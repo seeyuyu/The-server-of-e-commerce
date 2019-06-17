@@ -16,7 +16,9 @@ export default{
       return '1037796421@qq.com'
     },
     get pass(){
-      return 'fitagfwmumxtbbgi'
+      // return 'fitagfwmumxtbbgi'
+      return 'ehjtmghvxenrbdad'
+
     },
     get code(){
       return () =>{

@@ -32,8 +32,7 @@ app.use(session({
   key:'syy',
     prefix:'syy:uid',
   store: new Redis(),
-    // domain:'/127.0.0.1',3
-    domain:'/39.107.68.213' ,
+    domain:'/127.0.0.1',
 }))
 // middlewares
 app.use(bodyparser({

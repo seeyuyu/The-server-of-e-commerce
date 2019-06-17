@@ -171,6 +171,7 @@ router.post('/verify',async(ctx,next)=>{
   }
   await transporter.sendMail(mailOptions,(error,info) =>{
     if(error) {
+      
       return console.log(error)
     }else {
       Store.hmset(`nodemail:${ko.user}`,'code',ko.code,'expire',ko.expire,'email',ko.email)
@@ -199,7 +200,7 @@ router.get('/getUser',async(ctx) =>{
   if(ctx.isAuthenticated()){
     const {username,email} =ctx.session.passport.user
     ctx.body ={
-      user:namename,
+      user:username,
       email
     }
   }else{
