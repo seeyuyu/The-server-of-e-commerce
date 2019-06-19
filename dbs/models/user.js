@@ -15,7 +15,18 @@ const UserSchema =new Schema({
     require:true
   },
   userAddress:{
-    type:Array,
+    type:[
+      {
+        receiverName:{type:String,require:true},
+        receiverTel:{type:String,require:true},
+        receiverEmail:{type:String,require:true},
+        sheng:{type:String,require:true},
+        shi:{type:String,require:true},
+        qu:{type:String,require:true},
+        detail:{type:String,require:true},     //具体门派号码
+        isDefault:{type:Boolean},              //是否是默认地址
+      }
+    ],
     required:false
   },
   userShopCart:{

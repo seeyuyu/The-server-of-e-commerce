@@ -164,25 +164,42 @@ router.post('/verify',async(ctx,next)=>{
   }
   
   let mailOptions = {
-    from:`"认证邮件" <${Email.smtp.user}>`,
+    from:Email.smtp.user,
     to:ko.email,
     subject:'《杨二狗连锁超市》注册码',
     html:`您在《杨二狗连锁超市中》注册，您的注册码是${ko.code}，请在一分钟之内填写，如不是您本人，请联系杨二狗18610090645`
   }
   await transporter.sendMail(mailOptions,(error,info) =>{
     if(error) {
-      
-      return console.log(error)
+      console.log('transporter--------------------===============================')
+      console.log(transporter)
+      console.log(transporter.options.auth);
+
+      console.log('transporter----------------- ---==================================')
+      console.log('174行出错误');
+
+      console.log('mailOptions0------------------------------------------');
+      console.log(mailOptions);
+      console.log('mailOptions----------------------------------------------');
+      console.log(error);
+      console.log(info);
+      ctx.body={
+        code:-1,
+        msg:'未知错误，请联系开发人员'
+      }
+      return false
+
     }else {
       Store.hmset(`nodemail:${ko.user}`,'code',ko.code,'expire',ko.expire,'email',ko.email)
+      ctx.body={
+        code:0,
+        msg:'验证码已经发送，有效期为一分钟'
+      }
     }
   })
-  ctx.body={
-    code:0,
-    msg:'验证码已经发送，有效期为一分钟'
-  }
-})
 
+})
+//退出登录
 router.get('/exit',async (ctx,next) =>{
   await ctx.logout()
   if(!ctx.isAuthenticated()){
