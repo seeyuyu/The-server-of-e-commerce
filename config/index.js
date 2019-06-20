@@ -1,5 +1,5 @@
-var development_env =require('./development')
-var dev_ali_env =require('./dev-ali')
+var development_env = require('./development')
+var dev_ali_env = require('./dev-ali')
 
 //根据不同的NODE_ENV,输出不同的配置对象，默认输出development
 
