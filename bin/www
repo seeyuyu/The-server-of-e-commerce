@@ -3,7 +3,8 @@
 /**
  * Module dependencies.
  */
-var CONFIG = require('../config')
+var config =    require('../config/index.js');
+
 var app = require('../app');
 var debug = require('debug')('demo:server');
 var http = require('http');
@@ -16,9 +17,11 @@ var http = require('http');
 // var port = normalizePort(process.env.PORT || 80);
 
 // var port = normalizePort(process.env.PORT || 8081);
-var port = normalizePort(CONFIG.PORT || 3001);
+//   console.log('myconfig is ',config)
+
+var port = normalizePort(config.PORT || 3001);
 console.log('port is ',port);
-console.log('process.env.NODE_ENV is ',process.env.NODE_ENV)
+// console.log('process.env.NODE_ENV is ',process.env.NODE_ENV)
 // app.set('port', port);
 
 /**
