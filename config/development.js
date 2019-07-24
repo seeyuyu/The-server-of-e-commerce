@@ -8,4 +8,5 @@ module.exports =  {
   mongodb_url:'',
   redis_url:'',
   redis_port:'',
+  secret:'123456',
 }

@@ -8,14 +8,10 @@ const bodyparser = require('koa-bodyparser');
 const logger = require('koa-logger');
 const Redis = require('koa-redis') 
 const session =require('koa-generic-session')
-const index = require('./routes/index');
-const users = require('./routes/users');
-const firstPage =require('./routes/firstPage');
+const routing = require('./routes');
+const error = require('koa-json-error');
 import dbConfig from './dbs/config'
-import passport from './interface/utils/passport'
-import employee from './interface/employee'
-import user from './interface/user'
-import commodity from './interface/commodity'
+
 import cors from 'koa2-cors'
 // error handler
 onerror(app);
@@ -24,7 +20,6 @@ onerror(app);
 //   credentials:true,
 // }))
 
-console.log('123123132313')
 console.log('123123132313')
 
 app.keys = ['syy','keyskeys']
@@ -35,6 +30,7 @@ app.use(session({
   store: new Redis(),
     domain:'/127.0.0.1',
 }))
+
 // middlewares
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
@@ -42,6 +38,7 @@ app.use(bodyparser({
 
 // 配置路由登录表 
 app.use(json())
+
 mongoose.connect(dbConfig.dbs,{
   useNewUrlParser:true
 },(err) =>{
@@ -53,11 +50,10 @@ mongoose.connect(dbConfig.dbs,{
 })
 // 处理登录相关的
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/public'))
-
 app.use(views(__dirname + '/views', {
   extension: 'pug'
 }))
@@ -71,15 +67,14 @@ app.use( async (ctx, next) => {
 })
 
 // routes
-// app.use(index.routes(), index.allowedMethods())
-// app.use(users.routes(), users.allowedMethods())
-// app.use(firstPage.routes(), firstPage.allowedMethods())
-app.use(employee.routes()).use(employee.allowedMethods());
-app.use(commodity.routes()).use(commodity.allowedMethods());
-app.use(user.routes()).use(user.allowedMethods());
+routing(app);
 
 // error-handling
-
+app.use(error({
+  postFormat:(e,{stact, ...rest}) =>{
+    process.env.NODE_ENV ==='production'?rest:{stack, ...rest}
+  }
+}))
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
 });
