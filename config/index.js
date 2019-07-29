@@ -6,7 +6,7 @@ let  myConfig
 console.log('process.env.NODE_ENV is ----->',process.env.NODE_ENV);
 
 if(process.env.NODE_ENV =='dev_ali'){
-  myConfig =dev_ali_env
+  myConfig = dev_ali_env
 }else {
   myConfig = development_env
 }
