@@ -1,0 +1,11 @@
+/**
+ * 线上开发环境配置
+ * */
+
+module.exports =  {
+  env:'dev_ali',
+  PORT:8082,
+  mongodb_url:'',
+  redis_url:'',
+  redis_port:'',
+}

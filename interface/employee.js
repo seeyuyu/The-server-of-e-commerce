@@ -123,10 +123,10 @@ router.post('/login',async(ctx,next) =>{
       }
     })(ctx,next)
 })
-
+//发送验证码
 router.post('/verify',async(ctx,next)=>{
   let username = ctx.request.body.username
-  console.log(111111111111111111);
+  console.log('************************************************');
   console.log(ctx.request.body);
 
   const saveExpire = await Store.hget(`nodemail:${username}`,'expire')
@@ -142,10 +142,11 @@ router.post('/verify',async(ctx,next)=>{
     }
     return false
   }else{
-    ctx.body ={
-      code:-1,
-      msg:'莫名其妙的问题'
-    }
+    console.log('什么鬼！')
+    // ctx.body ={
+    //   code:-1,
+    //   msg:'莫名其妙的问题'
+    // }
   }
 
   let transporter =nodemailer.createTransport({
@@ -171,30 +172,28 @@ router.post('/verify',async(ctx,next)=>{
   }
   await transporter.sendMail(mailOptions,(error,info) =>{
     if(error) {
-      console.log('transporter--------------------===============================')
-      console.log(transporter)
-      console.log(transporter.options.auth);
-
-      console.log('transporter----------------- ---==================================')
-      console.log('174行出错误');
-
-      console.log('mailOptions0------------------------------------------');
-      console.log(mailOptions);
-      console.log('mailOptions----------------------------------------------');
-      console.log(error);
-      console.log(info);
+      // console.log('transporter--------------------===============================')
+      // console.log(transporter)
+      // console.log(transporter.options.auth);
+      // console.log('transporter----------------- ---==================================')
+      console.log('发送邮件，出错啦');
       ctx.body={
         code:-1,
         msg:'未知错误，请联系开发人员'
       }
+      console.log(error);
+      console.log(info);
       return false
-
     }else {
+      console.log('我发送成功了？？？？？')
+      console.log(info);
+
       Store.hmset(`nodemail:${ko.user}`,'code',ko.code,'expire',ko.expire,'email',ko.email)
-      ctx.body={
-        code:0,
-        msg:'验证码已经发送，有效期为一分钟'
-      }
+
+    }
+    ctx.body={
+      code:0,
+      msg:'验证码已经发送，有效期为一分钟'
     }
   })
 
