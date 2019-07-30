@@ -5,6 +5,7 @@ module.exports = app => {
       return;
     }
     const route = require(`./${file}`);
-    app.use(route.routes()).use(route.allowedMethods);
+    app.use(route.routes()).use(route.allowedMethods());
   });
 };
+
