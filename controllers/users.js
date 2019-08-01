@@ -7,7 +7,7 @@ class UsersCtl {
       ctx.throw(403, "没有权限");
     }
     console.log("检查通过");
-    next();
+    await next();
   }
 
   async create(ctx) {
@@ -66,10 +66,12 @@ class UsersCtl {
     if (!user) {
       ctx.throw(404, "用户不存在");
     }
-    User.updateOne(user, ctx.request.body, res => {
+     const newUser = await User.updateOne(user, ctx.request.body, res => {
       ctx.body = 222222222222;
       console.log("user2 is ", 11222222222222222);
     });
+    // 这里的执行顺序导致了我原来返回404，需要闹明白一点
+    ctx.body = newUser;
   }
 
   async delete(ctx) {
