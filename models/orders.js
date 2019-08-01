@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
-const Commodity = require("./users");
 const orderSchema = new Schema(
   {
     __V: { type: Number, select: false },

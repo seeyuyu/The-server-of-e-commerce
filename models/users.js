@@ -9,7 +9,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
     enum: ["male", "female"],
-    default: "male"
+    default: "male",
   },
   avatar_url: { type: String },
   locations: {
@@ -24,8 +24,12 @@ const userSchema = new Schema({
     select: false
   },
   order: {
-    type: [{ type: Schema.Types.ObjectId, ref: "Order" }],
-    select: false
+    type: [
+      {
+        order_id:{type: { type: Schema.Types.ObjectId, ref: "Order" }},
+        select: false
+      }
+    ]
   },
   shopping_car: {
     type: [

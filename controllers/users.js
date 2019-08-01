@@ -2,6 +2,14 @@ const User = require("../models/users");
 const jsonwebtoken = require("jsonwebtoken");
 const { secret } = require("../config/development");
 class UsersCtl {
+  async checkOwner(ctx, next) {
+    if (ctx.params.id !== ctx.state.user._id) {
+      ctx.throw(403, "没有权限");
+    }
+    console.log("检查通过");
+    next();
+  }
+
   async create(ctx) {
     ctx.verifyParams({
       name: { type: "string", required: true },
@@ -38,10 +46,32 @@ class UsersCtl {
       .limit(perPage)
       .skip(page * perPage);
   }
-  
-  async update(ctx){
 
+  async update(ctx) {
+    console.log("进入了update接口");
+    ctx.verifyParams({
+      name: { type: "string", required: false },
+      password: { type: "string", required: false },
+      gender: { type: "string", required: false },
+      avatar_url: { type: "string", required: false },
+      locations: { type: "array", itemType: "object", required: false },
+      order: { type: "array", itemType: "object", required: false },
+      shopping_car: { type: "string", itemType: "object", required: false },
+      collect: { type: "array", itemType: "object", required: false }
+    });
+    console.log(ctx.params);
+    // const user = await User.findByIdAndUpdate(ctx.params.id, ctx.request.body);
+    const user = await User.findById(ctx.params.id);
+    console.log("user is ", user);
+    if (!user) {
+      ctx.throw(404, "用户不存在");
+    }
+    User.updateOne(user, ctx.request.body, res => {
+      ctx.body = 222222222222;
+      console.log("user2 is ", 11222222222222222);
+    });
   }
+
   async delete(ctx) {
     const user = await User.findByIdAndRemove(ctx.params.id);
     if (!user) {
