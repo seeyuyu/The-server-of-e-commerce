@@ -4,7 +4,7 @@
 
 module.exports =  {
   env:'development',
-  PORT:8080,
+  PORT:8081,
   mongodb_url:'',
   redis_url:'',
   redis_port:'',

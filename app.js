@@ -24,14 +24,14 @@ console.log("123123132313");
 
 app.keys = ["syy", "keyskeys"];
 app.proxy = true;
-app.use(
-  session({
-    key: "syy",
-    prefix: "syy:uid",
-    store: new Redis(),
-    domain: "/127.0.0.1"
-  })
-);
+// app.use(
+//   session({
+//     key: "syy",
+//     prefix: "syy:uid",
+//     store: new Redis(),
+//     domain: "/127.0.0.1"
+//   })
+// );
 
 // middlewares
 app.use(

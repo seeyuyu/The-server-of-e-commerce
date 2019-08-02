@@ -25,17 +25,21 @@ class UsersCtl {
   }
 
   async login(ctx) {
+    console.log('-------------------------------login  begin')
     ctx.verifyParams({
       name: { type: "string", required: true },
       password: { type: "string", required: true }
     });
     const user = await User.findOne(ctx.request.body);
+    console.log(user)
     if (!user) {
       ctx.throw(401, "用户名或密码错误");
     }
     const { _id, name } = user;
     const token = jsonwebtoken.sign({ _id, name }, secret, { expiresIn: "1d" });
     ctx.body = { token };
+    console.log('-------------------------------login  end')
+
   }
 
   async find(ctx) {
