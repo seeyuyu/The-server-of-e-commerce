@@ -16,7 +16,7 @@ const auth = jwt({ secret });
 router.get("/", auth, find);
 router.post("/", create);
 router.put("/:id", auth, checkOwner, update);
-router.delete("/", auth, checkOwner, del);
+router.delete("/:id", auth, checkOwner, del);
 
 // 注册接口
 router.post("/login", login);

@@ -59,23 +59,25 @@ class UsersCtl {
       shopping_car: { type: "string", itemType: "object", required: false },
       collect: { type: "array", itemType: "object", required: false }
     });
-    console.log(ctx.params);
+    // console.log(ctx.params);
     // const user = await User.findByIdAndUpdate(ctx.params.id, ctx.request.body);
     const user = await User.findById(ctx.params.id);
-    console.log("user is ", user);
+    // console.log("user is ", user);
     if (!user) {
       ctx.throw(404, "用户不存在");
     }
-     const newUser = await User.updateOne(user, ctx.request.body, res => {
-      ctx.body = 222222222222;
-      console.log("user2 is ", 11222222222222222);
-    });
+    console.log(await User.findOne({ _id: ctx.params.id }));
+    const newUser = await User.updateOne(
+      { _id: ctx.params.id },
+      ctx.request.body
+    );
     // 这里的执行顺序导致了我原来返回404，需要闹明白一点
     ctx.body = newUser;
   }
 
   async delete(ctx) {
     const user = await User.findByIdAndRemove(ctx.params.id);
+    console.log('删除元素')
     if (!user) {
       ctx.throw(404, "用户不存在");
     }
