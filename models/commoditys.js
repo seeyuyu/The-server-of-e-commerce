@@ -1,83 +1,86 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
-const commoditySchema = new Schema({
-  __v: { type: Number, select: false },
-  categoryId: { type: String, required: true },
-  categoryImgPathReal: { type: String, required: true },
-  categoryName: { type: String, required: true },
-  childCategoryList: {
-    type: [
-      {
-        categoryId: { type: String, required: true },
-        categoryImgPathReal: { type: String, required: true },
-        categoryName: { type: String, required: true },
-        globalSelection: { type: Boolean, default: false },
-        isBento: { type: Boolean, default: false },
-        childCategoryList: {
-          type: [
-            {
-              categoryId: { type: String, required: true },
-              categoryImgPathReal: { type: String, required: true },
-              categoryName: { type: String, required: true },
-              globalSelection: { type: Boolean, default: false },
-              isBento: { type: Boolean, default: false }
-            }
-          ]
-        }
-      }
-    ],
-    required: true
-  },
-  globalSelection: { type: Boolean, default: false },
-  isBento: { type: Boolean, default: false },
+const commoditySchema = new Schema(
+  {
+    __V: { type: Number, select: false },
 
-  categoryImgPathReal: "",
-  categoryName: "品牌直发",
-  categoryType: 1,
-  childCategoryList: [
-    {
-      categoryId: "21383",
-      categoryImgPathReal: "",
-      categoryName: "良品铺子",
-      categoryType: 1,
-      childCategoryList: [
+    collageTagPreSell: { type: Boolean, default: false },
+    cornerMarkImgList: { type: Array, default: [] },
+    mainSecondCmCat: { type: Number },
+    monthSales: { type: String },
+    offlinePrice: { type: Number },
+    onlinePrice: { type: Number },
+    onlinePromotionPrice: { type: Number },
+    priceDisplay: { type: String },
+    promoting: { type: String },
+    promotionWare: { type: Boolean },
+    resultData: { type: String },
+    resultType: { type: Number },
+    searchRecTitle: { type: String },
+    sell: { type: Boolean },
+    sku: { type: String },
+    skuTagDataList: { type: Array },
+    status: { type: String },
+    storeId: { type: Number },
+    suitPromotionWareVO: { type: String },
+    tagPreSell: { type: Boolean },
+    venderId: { type: Number },
+    wareDetailImgList: { type: Array },
+    wareId: { type: String },
+    wareImg: { type: String },
+    wareName: { type: String },
+    warePrice: { type: String },
+    wareStatus: { type: Number },
+    wareType: { type: String },
+    promotionWareVO: {
+      type: [
         {
-          categoryId: "21391",
-          categoryImgPathReal: "",
-          categoryName: "美味零食",
-          categoryType: 1,
-          childCategoryList: [],
-          globalSelection: false,
-          isBento: false
+          isMatchSimplePro: { type: Boolean },
+          marketPrice: { type: Number },
+          origPrice: { type: Number },
+          priceCalcProId: { type: Number },
+          promotionInfoList: {
+            type: [
+              {
+                displayInfo: {
+                  proActId: { type: String },
+                  proActLinkDesc: { type: String },
+                  proActUrl: { type: String },
+                  proLimitDesc: { type: String },
+                  proSlogan: { type: String },
+                  proTag: { type: String }
+                },
+                giftGoods: { type: String },
+                maxOddLimitNum: { type: String },
+                proBatchNum: { type: String },
+                proCode: { type: String },
+                proId: { type: Number },
+                proName: { type: String },
+                proSchedule: { type: String },
+                proSubType: { type: String },
+                proType: { type: String },
+                runningStatus: { type: String },
+                suitGoods: { type: String },
+                tradeGoods: { type: String }
+              }
+            ]
+          },
+          promotionInfoListUp: { type: Array },
+          showLinePrice: { type: Boolean },
+          skuId: { type: Number },
+          skuName: { type: String },
+          skuType: { type: String },
+          storeId: { type: String },
+          unitProPrice: { type: Number },
+          venderId: { type: String }
         }
-      ],
-      globalSelection: false,
-      isBento: false
-    },
-    {
-      categoryId: "21404",
-      categoryImgPathReal: "",
-      categoryName: "蓝漂",
-      categoryType: 1,
-      childCategoryList: [
-        {
-          categoryId: "21405",
-          categoryImgPathReal: "",
-          categoryName: "纸品家清",
-          categoryType: 1,
-          childCategoryList: [],
-          globalSelection: false,
-          isBento: false
-        }
-      ],
-      globalSelection: false,
-      isBento: false
+      ]
     }
-  ],
-  globalSelection: false,
-  isBento: false
 
-  // 商品表应该有一个属性，我属于哪个商店，一对多这样省空间
-});
+    //已删除订单，已失效订单，未发货订单，已结束订单，已退货订单
+  },
+  { timestamps: true }
+);
+
 module.exports = model("Commodity", commoditySchema);
