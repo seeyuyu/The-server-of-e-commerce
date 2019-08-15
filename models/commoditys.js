@@ -4,7 +4,6 @@ const { Schema, model } = mongoose;
 const commoditySchema = new Schema(
   {
     __V: { type: Number, select: false },
-
     collageTagPreSell: { type: Boolean, default: false },
     cornerMarkImgList: { type: Array, default: [] },
     mainSecondCmCat: { type: Number },

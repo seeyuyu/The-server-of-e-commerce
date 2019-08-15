@@ -1,6 +1,8 @@
 const User = require("../models/users");
+
 const jsonwebtoken = require("jsonwebtoken");
 const { secret } = require("../config/development");
+
 class UsersCtl {
   async checkOwner(ctx, next) {
     if (ctx.params.id !== ctx.state.user._id) {
@@ -87,5 +89,7 @@ class UsersCtl {
     }
     ctx.status = 204;
   }
+  
+
 }
 module.exports = new UsersCtl();

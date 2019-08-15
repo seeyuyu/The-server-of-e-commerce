@@ -8,7 +8,8 @@ const {
   login,
   update,
   delete: del,
-  checkOwner
+  checkOwner,
+  
 } = require("../controllers/users");
 const { secret } = require("../config/development");
 const auth = jwt({ secret });

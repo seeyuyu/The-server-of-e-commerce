@@ -4,7 +4,7 @@ const { Schema, model } = mongoose;
 const listSchema = new Schema({
   __v: { type: Number, select: false },
   categoryId: { type: String, required: true },
-  categoryImgPathReal: { type: String, required: true },
+  categoryImgPathReal: { type: String },
   categoryName: { type: String, required: true },
   categoryType: { type: Number, default: 1 },
   globalSelection: { type: Boolean, default: false },
@@ -14,7 +14,7 @@ const listSchema = new Schema({
     type: [
       {
         categoryId: { type: String, required: true },
-        categoryImgPathReal: { type: String, required: true },
+        categoryImgPathReal: { type: String },
         categoryName: { type: String, required: true },
         categoryType: { type: Number, default: 1 },
         globalSelection: { type: Boolean, default: false },
@@ -24,7 +24,7 @@ const listSchema = new Schema({
           type: [
             {
               categoryId: { type: String, required: true },
-              categoryImgPathReal: { type: String, required: true },
+              categoryImgPathReal: { type: String },
               categoryName: { type: String, required: true },
               categoryType: { type: Number, default: 1 },
               globalSelection: { type: Boolean, default: false },
@@ -34,7 +34,7 @@ const listSchema = new Schema({
                 type: [
                   {
                     categoryId: { type: String, required: true },
-                    categoryImgPathReal: { type: String, required: true },
+                    categoryImgPathReal: { type: String },
                     categoryName: { type: String, required: true },
                     categoryType: { type: Number, default: 1 },
                     globalSelection: { type: Boolean, default: false },

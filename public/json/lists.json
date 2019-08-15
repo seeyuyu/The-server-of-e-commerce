@@ -1,0 +1,2133 @@
+{
+  "categoryList": [
+    {
+      "categoryId": "400100",
+      "categoryImgPathReal": "https://img.dmall.com/app/worthBuy.png",
+      "categoryName": "值得买",
+      "categoryType": 2,
+      "childCategoryList": [],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "400101",
+      "categoryImgPathReal": "https://img.dmall.com/app/hostSaleTop.png",
+      "categoryName": "热卖Top",
+      "categoryType": 2,
+      "childCategoryList": [],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "21382",
+      "categoryImgPathReal": "",
+      "categoryName": "品牌直发",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "21383",
+          "categoryImgPathReal": "",
+          "categoryName": "良品铺子",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "21391",
+              "categoryImgPathReal": "",
+              "categoryName": "美味零食",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "21404",
+          "categoryImgPathReal": "",
+          "categoryName": "蓝漂",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "21405",
+              "categoryImgPathReal": "",
+              "categoryName": "纸品家清",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "400102",
+      "categoryImgPathReal": "",
+      "categoryName": "多点生活",
+      "categoryType": 2,
+      "childCategoryList": [
+        {
+          "categoryId": "991000995",
+          "categoryImgPathReal": "",
+          "categoryName": "水饮馆",
+          "categoryType": 2,
+          "childCategoryList": [],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "991001005",
+          "categoryImgPathReal": "",
+          "categoryName": "雀巢咖啡5.9秒杀",
+          "categoryType": 2,
+          "childCategoryList": [],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "991000162",
+          "categoryImgPathReal": "",
+          "categoryName": "休闲下午茶",
+          "categoryType": 2,
+          "childCategoryList": [],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "991000159",
+          "categoryImgPathReal": "",
+          "categoryName": "健康饮品",
+          "categoryType": 2,
+          "childCategoryList": [],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "991000150",
+          "categoryImgPathReal": "",
+          "categoryName": "出游整理箱",
+          "categoryType": 2,
+          "childCategoryList": [],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "11340",
+      "categoryImgPathReal": "",
+      "categoryName": "蔬菜水果",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "11342",
+          "categoryImgPathReal": "",
+          "categoryName": "新鲜水果",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11348",
+              "categoryImgPathReal": "",
+              "categoryName": "进口水果",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "19983",
+              "categoryImgPathReal": "",
+              "categoryName": "瓜类",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "19984",
+              "categoryImgPathReal": "",
+              "categoryName": "浆果杂果",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "19985",
+              "categoryImgPathReal": "",
+              "categoryName": "苹果梨",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "19986",
+              "categoryImgPathReal": "",
+              "categoryName": "热带水果",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11341",
+          "categoryImgPathReal": "",
+          "categoryName": "蔬菜豆菇",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "19979",
+              "categoryImgPathReal": "",
+              "categoryName": "根茎类",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11345",
+              "categoryImgPathReal": "",
+              "categoryName": "冷藏蔬菜",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "19981",
+              "categoryImgPathReal": "",
+              "categoryName": "豆椒菌菇",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11343",
+              "categoryImgPathReal": "",
+              "categoryName": "豆制品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11344",
+              "categoryImgPathReal": "",
+              "categoryName": "加工蔬菜",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "15286",
+              "categoryImgPathReal": "",
+              "categoryName": "每日鲜",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "19980",
+              "categoryImgPathReal": "",
+              "categoryName": "瓜果类",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "11327",
+      "categoryImgPathReal": "",
+      "categoryName": "肉蛋水产",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "11329",
+          "categoryImgPathReal": "",
+          "categoryName": "肉/禽/蛋",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11330",
+              "categoryImgPathReal": "",
+              "categoryName": "安心蛋品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11331",
+              "categoryImgPathReal": "",
+              "categoryName": "安心牛肉",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11333",
+              "categoryImgPathReal": "",
+              "categoryName": "安心猪肉",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11386",
+              "categoryImgPathReal": "",
+              "categoryName": "安心羊肉",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11399",
+              "categoryImgPathReal": "",
+              "categoryName": "安心禽类",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "19990",
+              "categoryImgPathReal": "",
+              "categoryName": "料理品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11328",
+          "categoryImgPathReal": "",
+          "categoryName": "海鲜/水产",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11339",
+              "categoryImgPathReal": "",
+              "categoryName": "其他水产",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "19987",
+              "categoryImgPathReal": "",
+              "categoryName": "虾/蟹/贝类",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "19988",
+              "categoryImgPathReal": "",
+              "categoryName": "鱼/干货/丸类",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "19989",
+              "categoryImgPathReal": "",
+              "categoryName": "淡水活鲜",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "10249",
+      "categoryImgPathReal": "",
+      "categoryName": "粮油副食",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "10301",
+          "categoryImgPathReal": "",
+          "categoryName": "粮油干货",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10302",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150604/8213aef1-7214-468f-b3c8-3b2559cf3997",
+              "categoryName": "食用油",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10879",
+              "categoryImgPathReal": "",
+              "categoryName": "米面杂粮/粉条",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10307",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150507/2f5fb4d7-bfef-41e6-a3d8-f593d4b9bcd9",
+              "categoryName": "南北干货",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "10317",
+          "categoryImgPathReal": "",
+          "categoryName": "厨房调味",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10905",
+              "categoryImgPathReal": "",
+              "categoryName": "盐/糖/味精",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10907",
+              "categoryImgPathReal": "",
+              "categoryName": "酱油/醋",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10322",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150604/1ad2388b-2ac7-4bf9-a3cd-49b7feb07f09",
+              "categoryName": "调味油/汁",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10323",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150604/7afe02a2-33d6-41c0-84fd-52a00bc31043",
+              "categoryName": "调味料/酱",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10909",
+              "categoryImgPathReal": "",
+              "categoryName": "果酱/沙拉酱",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "11350",
+      "categoryImgPathReal": "",
+      "categoryName": "熟食速食",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "11352",
+          "categoryImgPathReal": "",
+          "categoryName": "面点熟食",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11358",
+              "categoryImgPathReal": "",
+              "categoryName": "水饺/面条/大饼",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11356",
+              "categoryImgPathReal": "",
+              "categoryName": "包子/馒头/花卷",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11357",
+              "categoryImgPathReal": "",
+              "categoryName": "汤圆/馄饨/烧麦",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11354",
+              "categoryImgPathReal": "",
+              "categoryName": "低温米面品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11355",
+              "categoryImgPathReal": "",
+              "categoryName": "其它点心",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11353",
+              "categoryImgPathReal": "",
+              "categoryName": " 现制主食",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11360",
+          "categoryImgPathReal": "",
+          "categoryName": "方便速食",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11362",
+              "categoryImgPathReal": "",
+              "categoryName": "罐头类食品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11363",
+              "categoryImgPathReal": "",
+              "categoryName": "卤蛋/火腿",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11364",
+              "categoryImgPathReal": "",
+              "categoryName": "泡菜/酱菜",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11365",
+              "categoryImgPathReal": "",
+              "categoryName": "粉丝/方便面",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11351",
+          "categoryImgPathReal": "",
+          "categoryName": "现制/酱卤",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11397",
+              "categoryImgPathReal": "",
+              "categoryName": "现制熟食",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "11196",
+      "categoryImgPathReal": "",
+      "categoryName": "牛奶冰品",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "11197",
+          "categoryImgPathReal": "",
+          "categoryName": "牛奶/豆奶",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11202",
+              "categoryImgPathReal": "",
+              "categoryName": "鲜牛奶",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11203",
+              "categoryImgPathReal": "",
+              "categoryName": "纯牛奶",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11204",
+              "categoryImgPathReal": "",
+              "categoryName": "风味奶/儿童奶",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11198",
+          "categoryImgPathReal": "",
+          "categoryName": "酸奶/乳酸",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11206",
+              "categoryImgPathReal": "",
+              "categoryName": "常温酸奶",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11207",
+              "categoryImgPathReal": "",
+              "categoryName": "低温酸奶",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11208",
+              "categoryImgPathReal": "",
+              "categoryName": "乳酸菌",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11201",
+          "categoryImgPathReal": "",
+          "categoryName": "冰品/奶酪",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "17195",
+              "categoryImgPathReal": "",
+              "categoryName": "冰淇淋",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11245",
+              "categoryImgPathReal": "",
+              "categoryName": "奶酪/黄油/沙拉酱",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "10250",
+      "categoryImgPathReal": "",
+      "categoryName": "酒水饮品",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "10977",
+          "categoryImgPathReal": "",
+          "categoryName": "中外名酒",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10980",
+              "categoryImgPathReal": "",
+              "categoryName": " 白酒",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10981",
+              "categoryImgPathReal": "",
+              "categoryName": " 啤酒",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10982",
+              "categoryImgPathReal": "",
+              "categoryName": " 葡萄酒/果酒",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10984",
+              "categoryImgPathReal": "",
+              "categoryName": " 保健酒",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "10328",
+          "categoryImgPathReal": "",
+          "categoryName": "水饮果茶",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10348",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150421/cbb4b111-892c-46ba-b7ce-ec9aa9928096",
+              "categoryName": "饮用水",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10349",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150421/ca74e994-3180-4b9b-afbe-1b918eb47f9c",
+              "categoryName": "苏打水",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10350",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150421/a0c56253-9b52-4d72-a6cf-f841eeb11bed",
+              "categoryName": "果汁饮品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10351",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150421/254856e5-6cae-402c-87ee-5bd2515be311",
+              "categoryName": "蛋白饮料",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10352",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150515/bd71045e-e388-48c6-b5c8-146d1f903ad1",
+              "categoryName": "茶饮品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10769",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20151211/4d5faa15-2758-4e64-88ab-69dbfe097088",
+              "categoryName": "碳酸饮品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10770",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20151211/304f461a-fdba-4278-92dd-90650a06f9a1",
+              "categoryName": "功能饮品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10771",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20151211/951f0357-ce57-4bfb-ae06-c30cd86916dd",
+              "categoryName": "咖啡/奶茶饮料",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10772",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20151211/415935dd-42dc-40ec-bbf4-90c87f423c6c",
+              "categoryName": "乳酸饮品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "11216",
+      "categoryImgPathReal": "",
+      "categoryName": "休闲小食",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "11220",
+          "categoryImgPathReal": "",
+          "categoryName": "饼干糕点",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11240",
+              "categoryImgPathReal": "",
+              "categoryName": "饼干",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11241",
+              "categoryImgPathReal": "",
+              "categoryName": "威化/曲奇",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11243",
+              "categoryImgPathReal": "",
+              "categoryName": "中式/西式糕点",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11244",
+              "categoryImgPathReal": "",
+              "categoryName": "面包/面包干",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11217",
+          "categoryImgPathReal": "",
+          "categoryName": "糖果巧克力",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11221",
+              "categoryImgPathReal": "",
+              "categoryName": "巧克力",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11222",
+              "categoryImgPathReal": "",
+              "categoryName": "口香糖",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11223",
+              "categoryImgPathReal": "",
+              "categoryName": "糖果/润喉糖",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11224",
+              "categoryImgPathReal": "",
+              "categoryName": "布丁/果冻",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11225",
+              "categoryImgPathReal": "",
+              "categoryName": "碎冰冰/龟苓膏",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11218",
+          "categoryImgPathReal": "",
+          "categoryName": "闲趣零食",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11228",
+              "categoryImgPathReal": "",
+              "categoryName": "仙贝/雪饼/米果",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11229",
+              "categoryImgPathReal": "",
+              "categoryName": "其他膨化食品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17203",
+              "categoryImgPathReal": "",
+              "categoryName": "肉干蜜饯",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11219",
+          "categoryImgPathReal": "",
+          "categoryName": "坚果炒货",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "17212",
+              "categoryImgPathReal": "",
+              "categoryName": "干果",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "17201",
+          "categoryImgPathReal": "",
+          "categoryName": "散装零食",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "17202",
+              "categoryImgPathReal": "",
+              "categoryName": "散干果蜜饯",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "17326",
+          "categoryImgPathReal": "",
+          "categoryName": "肉干/蜜饯",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "17328",
+              "categoryImgPathReal": "",
+              "categoryName": "蜜饯/话梅",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "10991",
+      "categoryImgPathReal": "",
+      "categoryName": "冲调固饮",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "10998",
+          "categoryImgPathReal": "",
+          "categoryName": "冲调饮品",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11002",
+              "categoryImgPathReal": "",
+              "categoryName": "谷物冲调",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11003",
+              "categoryImgPathReal": "",
+              "categoryName": "咖啡/饮粉",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17167",
+              "categoryImgPathReal": "",
+              "categoryName": "冲泡茶叶",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17168",
+              "categoryImgPathReal": "",
+              "categoryName": "蜜制饮品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "10252",
+      "categoryImgPathReal": "",
+      "categoryName": "母婴天地",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "11266",
+          "categoryImgPathReal": "",
+          "categoryName": "奶粉",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11267",
+              "categoryImgPathReal": "",
+              "categoryName": "婴幼奶粉",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11270",
+          "categoryImgPathReal": "",
+          "categoryName": "辅食",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11271",
+              "categoryImgPathReal": "",
+              "categoryName": "果泥/果蔬汁/水",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11274",
+              "categoryImgPathReal": "",
+              "categoryName": "零食/糖果",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11275",
+              "categoryImgPathReal": "",
+              "categoryName": "钙铁锌/DHA",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11277",
+          "categoryImgPathReal": "",
+          "categoryName": "尿裤/尿垫",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11278",
+              "categoryImgPathReal": "",
+              "categoryName": "婴幼儿尿裤",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11279",
+              "categoryImgPathReal": "",
+              "categoryName": "拉拉裤",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11282",
+          "categoryImgPathReal": "",
+          "categoryName": "湿巾/纸巾",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11283",
+              "categoryImgPathReal": "",
+              "categoryName": "婴幼湿巾/纸巾",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11284",
+          "categoryImgPathReal": "",
+          "categoryName": "洗护/哺喂",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11285",
+              "categoryImgPathReal": "",
+              "categoryName": "奶瓶/奶嘴/牙胶",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11287",
+              "categoryImgPathReal": "",
+              "categoryName": "喂哺餐具/电器",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11288",
+              "categoryImgPathReal": "",
+              "categoryName": "护肤/护臀",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11289",
+              "categoryImgPathReal": "",
+              "categoryName": "洗浴/清洁护理",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11290",
+          "categoryImgPathReal": "",
+          "categoryName": "玩具/车床",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11291",
+              "categoryImgPathReal": "",
+              "categoryName": "童装童鞋/玩具",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11293",
+          "categoryImgPathReal": "",
+          "categoryName": "妈妈用品",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11294",
+              "categoryImgPathReal": "",
+              "categoryName": "孕妈专区",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "10992",
+      "categoryImgPathReal": "",
+      "categoryName": "进口专区",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "11016",
+          "categoryImgPathReal": "",
+          "categoryName": "进口零食",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11020",
+              "categoryImgPathReal": "",
+              "categoryName": "休闲食品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11017",
+          "categoryImgPathReal": "",
+          "categoryName": "进口酒饮",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11024",
+              "categoryImgPathReal": "",
+              "categoryName": " 进口啤酒",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11025",
+              "categoryImgPathReal": "",
+              "categoryName": "进口饮品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17170",
+              "categoryImgPathReal": "",
+              "categoryName": "奶品其他",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11019",
+          "categoryImgPathReal": "",
+          "categoryName": "进口副食",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11030",
+              "categoryImgPathReal": "",
+              "categoryName": "粮油基础",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "17171",
+          "categoryImgPathReal": "",
+          "categoryName": "进口用品",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "17172",
+              "categoryImgPathReal": "",
+              "categoryName": "女性用品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17173",
+              "categoryImgPathReal": "",
+              "categoryName": "护理口腔",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17175",
+              "categoryImgPathReal": "",
+              "categoryName": "护肤",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "10993",
+      "categoryImgPathReal": "",
+      "categoryName": "美妆个护",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "11035",
+          "categoryImgPathReal": "",
+          "categoryName": "护肤美容",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11039",
+              "categoryImgPathReal": "",
+              "categoryName": "美妆百货",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11040",
+              "categoryImgPathReal": "",
+              "categoryName": "面霜/乳液",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11036",
+          "categoryImgPathReal": "",
+          "categoryName": "身体护理",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11042",
+              "categoryImgPathReal": "",
+              "categoryName": "身体/护手霜",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11037",
+          "categoryImgPathReal": "",
+          "categoryName": "洗护用品",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11046",
+              "categoryImgPathReal": "",
+              "categoryName": "洗发露",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11047",
+              "categoryImgPathReal": "",
+              "categoryName": "护发乳",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11048",
+              "categoryImgPathReal": "",
+              "categoryName": "洗护发套装",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11049",
+              "categoryImgPathReal": "",
+              "categoryName": "烫染造型",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17183",
+              "categoryImgPathReal": "",
+              "categoryName": "沐浴乳",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17185",
+              "categoryImgPathReal": "",
+              "categoryName": "香皂/洗手液",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "11038",
+          "categoryImgPathReal": "",
+          "categoryName": " 口腔护理",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11050",
+              "categoryImgPathReal": "",
+              "categoryName": "牙粉/牙膏",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "11051",
+              "categoryImgPathReal": "",
+              "categoryName": "牙线/牙刷",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "17186",
+          "categoryImgPathReal": "",
+          "categoryName": "男士专区",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "17188",
+              "categoryImgPathReal": "",
+              "categoryName": "剃须用品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17189",
+              "categoryImgPathReal": "",
+              "categoryName": "男士护理用品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "17190",
+          "categoryImgPathReal": "",
+          "categoryName": "女性专区",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "17191",
+              "categoryImgPathReal": "",
+              "categoryName": " 卫生巾",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17192",
+              "categoryImgPathReal": "",
+              "categoryName": " 护垫",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17193",
+              "categoryImgPathReal": "",
+              "categoryName": "急救/计生",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "10254",
+      "categoryImgPathReal": "",
+      "categoryName": "纸品家清",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "10531",
+          "categoryImgPathReal": "",
+          "categoryName": "纸品湿巾",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10536",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150421/84dbc737-cd85-4530-95ea-c1184312aa8e",
+              "categoryName": "卷纸",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10535",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150421/54e15598-94e5-4c40-bf1f-03690c79eeea",
+              "categoryName": "抽纸",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10540",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150421/1e6e3a81-525f-4791-adee-06103862d16c",
+              "categoryName": "湿巾",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10539",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150421/05a4cb91-425f-45e7-bc22-739cbf21a160",
+              "categoryName": "厨房用纸",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "10532",
+          "categoryImgPathReal": "",
+          "categoryName": "衣物洗涤",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10544",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150421/994c14f5-78dd-4e62-bf05-b176a09ec5dd",
+              "categoryName": "除菌消毒",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10545",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150421/97d6f1ee-3f42-4d15-a63f-3cdf8dec190c",
+              "categoryName": "柔顺剂",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17218",
+              "categoryImgPathReal": "",
+              "categoryName": "洗衣液/皂",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "10533",
+          "categoryImgPathReal": "",
+          "categoryName": "家居/厨卫清洁",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10548",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150421/e520718b-f0b5-4114-a51c-8a1dcb7b0c23",
+              "categoryName": "洗洁精",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10554",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150421/54beb069-ae7c-4cfb-bdc3-2c85a5ea923b",
+              "categoryName": "家具清洁",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "10945",
+          "categoryImgPathReal": "",
+          "categoryName": "清洁工具",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10946",
+              "categoryImgPathReal": "",
+              "categoryName": "拖把/扫帚",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10948",
+              "categoryImgPathReal": "",
+              "categoryName": "垃圾袋/垃圾桶",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10950",
+              "categoryImgPathReal": "",
+              "categoryName": "浴室用品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17227",
+              "categoryImgPathReal": "",
+              "categoryName": "垃圾袋",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17228",
+              "categoryImgPathReal": "",
+              "categoryName": "脸盆/垃圾桶/水桶",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "10951",
+          "categoryImgPathReal": "",
+          "categoryName": "驱蚊/除味",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10953",
+              "categoryImgPathReal": "",
+              "categoryName": "杀虫剂",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "10567",
+      "categoryImgPathReal": "",
+      "categoryName": "家居日用",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "10727",
+          "categoryImgPathReal": "",
+          "categoryName": "厨房用具",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10901",
+              "categoryImgPathReal": "",
+              "categoryName": "锅具",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10735",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20151014/ea1019ec-f7d3-40f6-a7dd-a9a1f47bed2b",
+              "categoryName": "厨房工具",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10736",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20151014/3670bb6d-f2e9-4edb-b15c-f048644926b3",
+              "categoryName": "保鲜盒/饭盒",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "10781",
+          "categoryImgPathReal": "",
+          "categoryName": "餐具/水具",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10904",
+              "categoryImgPathReal": "",
+              "categoryName": "餐具",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10906",
+              "categoryImgPathReal": "",
+              "categoryName": "水具",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "10575",
+          "categoryImgPathReal": "",
+          "categoryName": "一次性商品",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10576",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150506/1746ec49-78e3-4bb3-a12b-6b16c5ce5209",
+              "categoryName": "保鲜袋/保鲜膜",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10577",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20150506/4b631fd4-c239-4e3e-8cf3-0f796d423458",
+              "categoryName": "一次性餐具/桌布",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "10598",
+          "categoryImgPathReal": "",
+          "categoryName": "家居家纺",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10918",
+              "categoryImgPathReal": "",
+              "categoryName": "床上用品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10919",
+              "categoryImgPathReal": "",
+              "categoryName": "毛巾/浴巾",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10921",
+              "categoryImgPathReal": "",
+              "categoryName": "内衣裤 袜子",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "17169",
+              "categoryImgPathReal": "",
+              "categoryName": "男女拖鞋",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10924",
+              "categoryImgPathReal": "",
+              "categoryName": "布艺收纳/洗晒",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10600",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20151014/46054273-53d2-43a4-b0d2-f4aec40bea63",
+              "categoryName": "皮具护理",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "10621",
+          "categoryImgPathReal": "",
+          "categoryName": "户外/办公",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10934",
+              "categoryImgPathReal": "",
+              "categoryName": "家用五金",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10632",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20151014/b7099fa3-d674-4c19-b018-255bacdfed1f",
+              "categoryName": "汽车用品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10985",
+              "categoryImgPathReal": "",
+              "categoryName": "文化饰品/用品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        },
+        {
+          "categoryId": "10633",
+          "categoryImgPathReal": "",
+          "categoryName": "宠物商品",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "10637",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20151014/fef0825e-5d41-4d2a-ac6d-01db747d8a9d",
+              "categoryName": "宠物食品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            },
+            {
+              "categoryId": "10638",
+              "categoryImgPathReal": "https://img.dmallcdn.com/20151014/6859141a-594a-4375-8c64-d567b5f7178a",
+              "categoryName": "宠物用品",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    },
+    {
+      "categoryId": "10759",
+      "categoryImgPathReal": "",
+      "categoryName": "节日礼券",
+      "categoryType": 1,
+      "childCategoryList": [
+        {
+          "categoryId": "11246",
+          "categoryImgPathReal": "",
+          "categoryName": "大闸蟹礼券",
+          "categoryType": 1,
+          "childCategoryList": [
+            {
+              "categoryId": "11400",
+              "categoryImgPathReal": "",
+              "categoryName": "大闸蟹券",
+              "categoryType": 1,
+              "childCategoryList": [],
+              "globalSelection": false,
+              "isBento": false
+            }
+          ],
+          "globalSelection": false,
+          "isBento": false
+        }
+      ],
+      "globalSelection": false,
+      "isBento": false
+    }
+  ]
+}
