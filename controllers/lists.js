@@ -3,7 +3,7 @@ const List = require("../models/Lists")
 const jsonwebtoken = require("jsonwebtoken");
 const { secret } = require("../config/development");
 const listData = require("../public/json/lists.json")
-class CommodityCtl {
+class ListCtl {
 
   async create(ctx) {
     console.log(123)
@@ -27,6 +27,7 @@ class CommodityCtl {
     const lists = await List.find({})
     ctx.body = lists
   }
+  
   async delete(ctx){
     const list = await List.findOneAndRemove({'categoryId':400100000})
     if(!list){
@@ -36,4 +37,4 @@ class CommodityCtl {
   }
 }
 
-module.exports = new CommodityCtl();
+module.exports = new ListCtl();
