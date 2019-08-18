@@ -1,18 +1,16 @@
 const Commodity = require("../models/commoditys");
-const searchDataUrl = "../public/searchData";
+const searchDataUrl = "./public/searchData";
 const fs = require("fs");
 
 class commodityCtl {
   async create(ctx) {
     try{
-      await fs.readdirSync(searchDataUrl,err=>{
-        console.log("log is ");
-        console.log(err);
-
-      }).forEach( async file => {
+      console.log(searchDataUrl)
+      await fs.readdirSync(searchDataUrl).forEach( async file => {
         console.log(file)
+        let abc = await fs.readFileSync(`${searchDataUrl}/${file}`,'utf8')
+        console.log(JSON.parse(abc).data.adList[0])
         console.log('file-----------------------------------------------')
-
         const data = Commodity.findOne({"cate":file.categoryId})
         if(data){
           return
