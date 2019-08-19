@@ -1,0 +1,24 @@
+<div class="item-view-item-item"><div class="item-view-item-item-container"><div class="item-view-item-item-wrapper"></div></div></div><div class="item-view-suitdetail-suitdetail suitdetail-mod"><div class="toolbar"><span class="J_Link J_ToolBarBack back" href="-1"><i class="icon icon-arrow-left-white"></i> </span><span class="J_Link J_Home home" href="#wxdmall/view/home/home" style="display:none"><i class="icon icon-home"></i></span><p class="titleText">促销套装</p><p></p><div class="act"></div></div><div class="J_Cont content"></div><script class="J_Temp" type="text/html"> <%if(data && data.length){%> <%for( var i = 0, p; p = data[i]; ++i ){%> <div class="J_Suit suit border-1px border-t-b <%= i == 0 ? 'open':''%>">
+  <header class="J_SuitItem border-1px border-b clearfix">
+    <h3><%= p.suitName%></h3>
+    <span class="price"><sub>¥</sub><%= priceOfFen(p.suitPrice)%></span>
+    <span class="label-tag border-1px border-all"><%= p.cutDowmLable%></span>
+    <i class="icon-css icon-bottom"></i>
+  </header> <% var len = p.wares.length%> <ul class="suit-list-mini clearfix"> <%for( var j = 0, o; o = j < 3 && p.wares[j]; ++j){%> <li data-sku="<%= o.sku%>">
+      <img class="img" src="<%= o.img%>" alt="商品图片">
+      <i class="icon-cross <%= (len - 1 == j) && len <= 3 ? 'hide':''%>"></i>
+    </li> <%}%> <%if( len> 3 ){%> <li><p class="img placeholder">......</p></li> <%}%> </ul>
+  <ul class="suit-list"> <%for( var j = 0, o; o = p.wares[j]; ++j){%> <li class="J_Link" href="#item/view/item/item:id=<%= venderId%>-<%= storeId%>-<%= o.sku%>" data-sku="<%= o.sku%>">
+      <img class="img" src="<%= o.img + '_360x360H'%>" alt="商品图片">
+      <div class="name-box"><p class="name"><%= o.title%></p></div>
+      <span class="num"><sub>x</sub><%= o.count%></span>
+    </li> <%}%> </ul>
+  <footer>
+    <span class="info"><%= p.limitDesc%></span>
+    <button type="button"
+    data-suitcount="<%= p.totalCount%>"
+    data-storeid="<%= storeId%>"
+    data-suitid="<%= p.suitId%>"
+    class="J_AddCart button primary" <%= p.isSoldOut ? 'disabled': ''%>> <%= p.isSoldOut ? '抢光啦':'加入购物车'%></button>
+  </footer>
+</div> <%}%> <p class="no-more">没有更多了~</p> <%}else{%> <div class="empty">没找到相关的促销套装</div> <%}%> </script></div>
