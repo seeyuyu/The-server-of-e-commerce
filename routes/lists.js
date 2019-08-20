@@ -1,5 +1,5 @@
 const Router = require("koa-router");
-const router = new Router({ prefix: "/commoditys" });
+const router = new Router({ prefix: "/liots" });
 const jwt = require("koa-jwt");
 const {
   create,

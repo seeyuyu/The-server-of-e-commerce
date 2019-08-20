@@ -43,78 +43,95 @@ class commodityCtl {
     }
   }
 
-  async ajax(ctx) {
-    const commodityArray = [];
+  async getAllData(ctx) {
+    let count = 0;
+    const baseUrl = `http://searchgw.dmall.com/mp/search/`;
+    const dataJson = {
+      venderId: 1,
+      storeId: 239,
+      businessCode: 1,
+      from: 1,
+      categoryType: 1,
+      pageNum: 1,
+      pageSize: 20,
+      categoryId: "11341",
+      categoryLevel: 1
+    };
 
-    const getCommodityId = (obj = {}) => {
-      const { childCategoryList, categoryId } = obj;
-
-      // console.log( childCategoryList||childCategoryList.length)
-      // 如果不是个数组那就push id
-      if (childCategoryList == undefined || childCategoryList.length <1) {
+    const getCommodityIdArray = async listArray => {
+      const commodityArray = [];
+      await listArray.forEach(async item => {
+        // getCommodityId(item);
+        const { childCategoryList, categoryId } = item;
         commodityArray.push(categoryId);
         console.log(`categoryId is`, categoryId);
-        return null;
-        // 如果是个数组，那就在遍历一遍
-      } else {
-        console.log("进来了递归函数")
-        childCategoryList.forEach(item =>{
-          return getCommodityId(childCategoryList);
-        })
-        
-      }
+        if (Array.isArray(childCategoryList) && childCategoryList.length > 0) {
+          console.log("进来了内层函数" + count++);
+          childCategoryList.forEach(item => {
+            commodityArray.push(item.categoryId);
+          });
+        }
+      });
+
+      console.log("commodityArray.length is ", commodityArray.length);
+      return commodityArray;
+    };
+
+    const httpGet = async commodityArray => {
+      let count = 1;
+      commodityArray.forEach(async item => {
+        dataJson.categoryId = item;
+        try {
+          const data = await axios.post(baseUrl + "wareSearch", {
+            param: JSON.stringify(dataJson)
+          });
+          const { wareList, pageInfo } = data.data.data;
+          if (count) {
+            // console.log("p90-------", wareList);
+            console.log("p91-------", pageInfo);
+            count++;
+
+
+            if (Array.isArray(wareList) && wareList.length >= 1) {
+              await wareList.forEach(async item => {
+                console.log(' p97---------------item.wareId is ',item.wareId)
+                if (!await Commodity.findOne({ wareId: item.wareId })) {
+                  console.log('存东西啊')
+                  try{
+                    const data = await new Commodity(item).save();
+                    console.log("存东西的回执单",count)
+                  }catch{
+                    throw new Error('存库出错了');
+                  }
+             
+                }
+              });
+            }
+
+          }
+
+     
+        } catch {
+          throw new Error(
+            "请求ajax数据出错,categoryId is ",
+            dataJson.categoryId
+          );
+        }
+      });
     };
 
     try {
       const listArray = await List.find();
-      listArray.forEach(async item => {
-        getCommodityId(item);
-      });
-      console.log("id的总数是…… ", commodityArray.length);
+      const commodityArray = await getCommodityIdArray(listArray);
+      console.log("p101----------commodityArray is", commodityArray);
+      await httpGet(commodityArray);
     } catch {
-      throw new Error("拿list数据出错");
+      throw new Error("遍历list出错");
     }
-
-    // const dataJson = {
-    //   venderId: 1,
-    //   storeId: 239,
-    //   businessCode: 1,
-    //   from: 1,
-    //   categoryType: 1,
-    //   pageNum: 1,
-    //   pageSize: 20,
-    //   categoryId: "21382",
-    //   categoryLevel: 1
-    // };
-
-    // const baseUrl = `http://searchgw.dmall.com/mp/search/`;
-    // try {
-    //   const data = await axios.post(baseUrl + "wareSearch", {
-    //     param: JSON.stringify(dataJson)
-    //   });
-    //   console.log(data);
-    //   ctx.body = data.data;
-    // } catch {
-    //   throw new Error("err");
-    // }
-
-    //   axios
-    //     .post(baseUrl + "wareSearch", {
-    //       param: JSON.stringify(dataJson)
-    //     })
-    //     .then(res => {
-    //       console.log("回调触发");
-    //       if (res.data.code == "0000") {
-    //         console.log(res.data.data.wareList);
-    //         that.classifyList = res.data.data;
-    //       } else {
-    //         alert(res.data.msg);
-    //       }
-    //     })
-    //     .catch(err => {
-    //       console.log(err);
-    //       console.log("错误捕捉");
-    //     });
+  }
+  async get(ctx){
+    const data = await Commodity.find({});
+    ctx.body = data
   }
 }
 

@@ -6,7 +6,10 @@ const commoditySchema = new Schema(
     __V: { type: Number, select: false },
     collageTagPreSell: { type: Boolean, default: false },
     cornerMarkImgList: { type: Array, default: [] },
+    mainFirstCmCat: { type: Number, select: false }, //新增
     mainSecondCmCat: { type: Number },
+    mainThirdCmCat: { type: Number, select: false }, //新增 暂时不用 移动端抓包抓不到
+    brandId: { type: Number, select: false },        //新增 暂时不用 移动端抓包抓不到
     monthSales: { type: String },
     offlinePrice: { type: Number },
     onlinePrice: { type: Number },

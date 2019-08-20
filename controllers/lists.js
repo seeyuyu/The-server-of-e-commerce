@@ -4,12 +4,12 @@ const List = require("../models/lists");
 
 const jsonwebtoken = require("jsonwebtoken");
 const { secret } = require("../config/development");
-const listData = require("../public/json/lists.json");
+const listData = require("../public/json/list-id239-h5.json");
 class ListCtl {
   async create(ctx) {
     console.log(123);
     // console.log(commodiityData.categoryList)
-    await listData.categoryList.forEach(async item => {
+    await listData.data.wareCategory[0].categoryList.forEach(async item => {
       const data = await List.findOne({ categoryId: item.categoryId });
       if (!data) {
         console.log(item);
