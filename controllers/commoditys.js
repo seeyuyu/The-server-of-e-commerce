@@ -57,7 +57,13 @@ class commodityCtl {
       categoryId: "11341",
       categoryLevel: 1
     };
-
+    const delay = time => {
+      return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+          resolve();
+        }, time);
+      });
+    };
     const getCommodityIdArray = async listArray => {
       const commodityArray = [];
       await listArray.forEach(async item => {
@@ -76,47 +82,98 @@ class commodityCtl {
       console.log("commodityArray.length is ", commodityArray.length);
       return commodityArray;
     };
+    const saveDB = async wareList => {
+      if (Array.isArray(wareList) && wareList.length >= 1) {
+        await wareList.forEach(async item => {
+          // console.log(" p97---------------item.wareId is ", item.wareId);
+          if (!(await Commodity.findOne({ wareId: item.wareId }))) {
+            console.log("存东西啊");
 
-    const httpGet = async commodityArray => {
+            try {
+              const data = await new Commodity(item).save();
+              // console.log("存东西的回执单", count);
+              console.log(
+                "当前数据总量是————————————————",
+                await Commodity.count()
+              );
+            } catch {
+              throw new Error("存库出错了");
+            }
+          } else {
+            console.log(
+              "数据已在库里面，不存——————————————————————————",
+              item.wareId
+            );
+          }
+        });
+      }
+    };
+    const sendAjax = async (categoryId, pageNum = 1, pageCount = 1) => {
+      const dataJson = {
+        venderId: 1,
+        storeId: 239,
+        businessCode: 1,
+        from: 1,
+        categoryType: 1,
+        pageNum: 1,
+        pageSize: 20,
+        categoryId: "11341",
+        categoryLevel: 1
+      };
       let count = 1;
-      commodityArray.forEach(async item => {
-        dataJson.categoryId = item;
+      // 如果pageNum > pageCount  那么代表请求完毕，直接跳出
+      if (pageNum > pageCount) {
+        return null;
+      } else {
+        await delay(10);
         try {
+          dataJson.categoryId = categoryId;
+          dataJson.pageNum = pageNum;
           const data = await axios.post(baseUrl + "wareSearch", {
             param: JSON.stringify(dataJson)
           });
           const { wareList, pageInfo } = data.data.data;
-          if (count) {
+          pageCount = pageInfo.pageCount;
+          if (count <= 3) {
+            // console.log(dataJson);
+            console.log("dataJson.pageNum is", dataJson.pageNum);
+            console.log("pageNum is", pageNum);
             // console.log("p90-------", wareList);
-            console.log("p91-------", pageInfo);
-            count++;
-
-
-            if (Array.isArray(wareList) && wareList.length >= 1) {
-              await wareList.forEach(async item => {
-                console.log(' p97---------------item.wareId is ',item.wareId)
-                if (!await Commodity.findOne({ wareId: item.wareId })) {
-                  console.log('存东西啊')
-                  try{
-                    const data = await new Commodity(item).save();
-                    console.log("存东西的回执单",count)
-                  }catch{
-                    throw new Error('存库出错了');
-                  }
-             
-                }
-              });
-            }
-
+            // console.log("p91-------", pageInfo);
           }
+          // console.log("p104-------", count);
+          count++;
+          saveDB(wareList);
 
-     
+          if (pageNum < pageCount) {
+            pageNum++;
+            console.log("pageNum is", pageNum);
+            console.log("pageCount is", pageCount);
+            sendAjax(categoryId, pageNum, pageCount);
+          }
         } catch {
           throw new Error(
             "请求ajax数据出错,categoryId is ",
             dataJson.categoryId
           );
         }
+      }
+    };
+
+    const httpGet = async commodityArray => {
+      let count = 1;
+      commodityArray.forEach(async item => {
+        // dataJson.categoryId = item;
+        // let pageCount = 1;
+        // let pageNum =1
+        // for (; pageNum <= pageCount; ) {
+        // console.log("这是一次循环pageCount is", pageCount);
+        // dataJson.pageNum = pageNum++;
+        await delay(1000);
+        console.log(`遍历commodity----------这是第${count}遍`);
+        sendAjax(item);
+        // function()
+        // }
       });
     };
 
@@ -129,9 +186,14 @@ class commodityCtl {
       throw new Error("遍历list出错");
     }
   }
-  async get(ctx){
-    const data = await Commodity.find({});
-    ctx.body = data
+
+  async find(ctx) {
+    const { per_page = 20 } = ctx.query;
+    const page = Math.max(ctx.query.page * 1, 1) - 1;
+    const perPage = Math.max(per_page * 1, 1);
+    ctx.body = await Commodity.find({ wareName: new RegExp(ctx.query.q) })
+      .limit(perPage)
+      .skip(page * perPage);
   }
 }
 
