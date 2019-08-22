@@ -21,7 +21,7 @@ axios.defaults.transformRequest = [
 ];
 
 class commodityCtl {
-  async create(ctx) {
+  async getFromJson(ctx) {
     try {
       console.log(searchDataUrl);
       await fs.readdirSync(searchDataUrl).forEach(async file => {
@@ -43,20 +43,9 @@ class commodityCtl {
     }
   }
 
-  async getAllData(ctx) {
+  async getFromOnline(ctx) {
     let count = 0;
     const baseUrl = `http://searchgw.dmall.com/mp/search/`;
-    const dataJson = {
-      venderId: 1,
-      storeId: 239,
-      businessCode: 1,
-      from: 1,
-      categoryType: 1,
-      pageNum: 1,
-      pageSize: 20,
-      categoryId: "11341",
-      categoryLevel: 1
-    };
     const delay = time => {
       return new Promise(function(resolve, reject) {
         setTimeout(function() {
@@ -83,30 +72,27 @@ class commodityCtl {
       return commodityArray;
     };
     const saveDB = async wareList => {
-      if (Array.isArray(wareList) && wareList.length >= 1) {
-        await wareList.forEach(async item => {
-          // console.log(" p97---------------item.wareId is ", item.wareId);
-          if (!(await Commodity.findOne({ wareId: item.wareId }))) {
-            console.log("存东西啊");
-
-            try {
-              const data = await new Commodity(item).save();
-              // console.log("存东西的回执单", count);
-              console.log(
-                "当前数据总量是————————————————",
-                await Commodity.count()
-              );
-            } catch {
-              throw new Error("存库出错了");
-            }
-          } else {
-            console.log(
-              "数据已在库里面，不存——————————————————————————",
-              item.wareId
-            );
-          }
-        });
+      // 如果是个是个对象，不是个数组，那就把它变成数组
+      if (!Array.isArray(wareList) && typeof wareList == "object") {
+        wareList = [].concat(wareList);
       }
+      await wareList.forEach(async item => {
+        // console.log(" p97---------------item.wareId is ", item.wareId);
+        if (await Commodity.findOne({ wareId: item.wareId })) {
+          ctx.throw(409, `数据已在库里面，不存${item.wareId}`);
+        }
+        try {
+          const data = await new Commodity(item).save();
+          console.log(
+            "存储成功之后          当前数据总量是————————————————",
+            await Commodity.count()
+          );
+          ctx.body = data;
+        } catch {
+          ctx.throw(400, `存库出错了", ${item.wareId}`);
+          throw new Error("存库出错了----------", item.wareId);
+        }
+      });
     };
     const sendAjax = async (categoryId, pageNum = 1, pageCount = 1) => {
       const dataJson = {
@@ -159,7 +145,6 @@ class commodityCtl {
         }
       }
     };
-
     const httpGet = async commodityArray => {
       let count = 1;
       commodityArray.forEach(async item => {
@@ -195,6 +180,104 @@ class commodityCtl {
       .limit(perPage)
       .skip(page * perPage);
   }
+  // 入库以后，主键应该变为了Object-id，而不是categoryId
+  async create(ctx) {
+    ctx.verifyParams({
+      collageTagPreSell: { type: Boolean, default: false },
+      cornerMarkImgList: { type: Array, default: [] },
+      mainFirstCmCat: { type: Number, select: false }, //新增
+      mainSecondCmCat: { type: Number, required: true },
+      mainThirdCmCat: { type: Number, select: false }, //新增 暂时不用 移动端抓包抓不到
+      brandId: { type: Number, select: false, required: true }, //新增 暂时不用 移动端抓包抓不到
+      monthSales: { type: String },
+      offlinePrice: { type: Number },
+      onlinePrice: { type: Number },
+      onlinePromotionPrice: { type: Number },
+      priceDisplay: { type: String },
+      promoting: { type: String },
+      promotionWare: { type: Boolean },
+      resultData: { type: String },
+      resultType: { type: Number },
+      searchRecTitle: { type: String },
+      sell: { type: Boolean },
+      sku: { type: String },
+      skuTagDataList: { type: Array },
+      status: { type: String },
+      storeId: { type: Number },
+      suitPromotionWareVO: { type: String },
+      tagPreSell: { type: Boolean },
+      venderId: { type: Number },
+      wareDetailImgList: { type: Array },
+      wareId: { type: String },
+      wareImg: { type: String, required: true },
+      wareName: { type: String, required: true },
+      warePrice: { type: String, required: true },
+      wareStatus: { type: Number },
+      wareType: { type: String },
+      promotionWareVO: { type: Object }
+    });
+    const { wareName } = ctx.request.body;
+    const newCommodity = await Commodity.findOne({ wareName });
+    if (newCommodity) {
+      ctx.throw(409, "货物名字已经被使用");
+    }
+    const commodity = await new Commodity(ctx.request.body).save();
+    ctx.body = commodity;
+  }
+  async updata(ctx) {
+    console.log("进入了updata接口");
+    ctx.verifyParams({
+      collageTagPreSell: { type: Boolean, default: false },
+      cornerMarkImgList: { type: Array, default: [] },
+      mainFirstCmCat: { type: Number, select: false }, //新增
+      mainSecondCmCat: { type: Number, required: true },
+      mainThirdCmCat: { type: Number, select: false }, //新增 暂时不用 移动端抓包抓不到
+      brandId: { type: Number, select: false, required: true }, //新增 暂时不用 移动端抓包抓不到
+      monthSales: { type: String },
+      offlinePrice: { type: Number },
+      onlinePrice: { type: Number },
+      onlinePromotionPrice: { type: Number },
+      priceDisplay: { type: String },
+      promoting: { type: String },
+      promotionWare: { type: Boolean },
+      resultData: { type: String },
+      resultType: { type: Number },
+      searchRecTitle: { type: String },
+      sell: { type: Boolean },
+      sku: { type: String },
+      skuTagDataList: { type: Array },
+      status: { type: String },
+      storeId: { type: Number },
+      suitPromotionWareVO: { type: String },
+      tagPreSell: { type: Boolean },
+      venderId: { type: Number },
+      wareDetailImgList: { type: Array },
+      wareId: { type: String },
+      wareImg: { type: String, required: true },
+      wareName: { type: String, required: true },
+      warePrice: { type: String, required: true },
+      wareStatus: { type: Number },
+      wareType: { type: String },
+      promotionWareVO: { type: Object }
+    });
+    const commodity = await Commodity.findById(ctx.request._id);
+    if (commodity) {
+      ctx.throw(404, `商品不存在`);
+    }
+    const newCommodity = await Commodity.updateOne(
+      { _id: ctx.request.id },
+      ctx.request.body
+    );
+    ctx.body = newCommodity;
+  }
+  async delete(ctx) {
+    const commodity = await Commodity.findById(ctx.request._id);
+    if(commodity){
+      ctx.throw(404,`商品不存在`);
+    }
+    //这里应该找一个属性，保存商品的状态，不能删除，防止影响订单
+    // commodity.status = false
+    ctx.statsu =204;
+  }
 }
-
 module.exports = new commodityCtl();

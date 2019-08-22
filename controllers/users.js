@@ -89,7 +89,5 @@ class UsersCtl {
     }
     ctx.status = 204;
   }
-  
-
 }
 module.exports = new UsersCtl();

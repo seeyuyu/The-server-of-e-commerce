@@ -9,7 +9,25 @@ const commoditySchema = new Schema(
     mainFirstCmCat: { type: Number, select: false }, //新增
     mainSecondCmCat: { type: Number },
     mainThirdCmCat: { type: Number, select: false }, //新增 暂时不用 移动端抓包抓不到
-    brandId: { type: Number, select: false },        //新增 暂时不用 移动端抓包抓不到
+    brandId: { type: Number, select: false }, //新增 暂时不用 移动端抓包抓不到
+
+    wareImgList: { type: Array },
+    cornerSign: { type: Array },
+    // warebaseName: { type: String, required: true },
+    warebaseKeyword: { type: String }, //详情页介绍关键字，自然熟，无任何添加
+    // warebaseSkuId: { type: String, required: true },
+    // warebaseWareId: { type: String, required: true },
+    // warebaseBrandId: { type: String },
+    shipmentTimeTip: { type: String }, //预计两天发货
+    storeLogo: { type: String },
+    storeName: { type: String },
+
+    referenceWareList: [
+      //推荐商品的列表
+      {
+        ware_id: { type: { type: Schema.Types.ObjectId, ref: "Commodity" } }
+      }
+    ],
     monthSales: { type: String },
     offlinePrice: { type: Number },
     onlinePrice: { type: Number },

@@ -27,7 +27,6 @@ const userSchema = new Schema({
     type: [
       {
         order_id:{type: { type: Schema.Types.ObjectId, ref: "Order" }},
-        select: false
       }
     ]
   },
