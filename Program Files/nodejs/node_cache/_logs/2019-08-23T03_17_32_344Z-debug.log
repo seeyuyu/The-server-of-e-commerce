@@ -1,0 +1,38 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'E:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'E:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'dev' ]
+2 info using npm@6.4.1
+3 info using node@v10.15.1
+4 verbose run-script [ 'predev', 'dev', 'postdev' ]
+5 info lifecycle the_server_new@0.1.0~predev: the_server_new@0.1.0
+6 info lifecycle the_server_new@0.1.0~dev: the_server_new@0.1.0
+7 verbose lifecycle the_server_new@0.1.0~dev: unsafe-perm in lifecycle true
+8 verbose lifecycle the_server_new@0.1.0~dev: PATH: E:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;E:\LIDY-project\The-server-of-e-commerce\node_modules\.bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Program Files\nodejs\;e:\Program Files\Git\cmd;e:\Program Files\nodejs\node_global;C:\Program Files\Redis\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;e:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;
+9 verbose lifecycle the_server_new@0.1.0~dev: CWD: E:\LIDY-project\The-server-of-e-commerce
+10 silly lifecycle the_server_new@0.1.0~dev: Args: [ '/d /s /c',
+10 silly lifecycle   'cross-env NODE_ENV=development ./node_modules/.bin/nodemon bin/www --exec babel-node' ]
+11 silly lifecycle the_server_new@0.1.0~dev: Returned: code: 1  signal: null
+12 info lifecycle the_server_new@0.1.0~dev: Failed to exec dev script
+13 verbose stack Error: the_server_new@0.1.0 dev: `cross-env NODE_ENV=development ./node_modules/.bin/nodemon bin/www --exec babel-node`
+13 verbose stack Exit status 1
+13 verbose stack     at EventEmitter.<anonymous> (E:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\index.js:301:16)
+13 verbose stack     at EventEmitter.emit (events.js:189:13)
+13 verbose stack     at ChildProcess.<anonymous> (E:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\lib\spawn.js:55:14)
+13 verbose stack     at ChildProcess.emit (events.js:189:13)
+13 verbose stack     at maybeClose (internal/child_process.js:970:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:259:5)
+14 verbose pkgid the_server_new@0.1.0
+15 verbose cwd E:\LIDY-project\The-server-of-e-commerce
+16 verbose Windows_NT 10.0.18362
+17 verbose argv "E:\\Program Files\\nodejs\\node.exe" "E:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "dev"
+18 verbose node v10.15.1
+19 verbose npm  v6.4.1
+20 error code ELIFECYCLE
+21 error errno 1
+22 error the_server_new@0.1.0 dev: `cross-env NODE_ENV=development ./node_modules/.bin/nodemon bin/www --exec babel-node`
+22 error Exit status 1
+23 error Failed at the the_server_new@0.1.0 dev script.
+23 error This is probably not a problem with npm. There is likely additional logging output above.
+24 verbose exit [ 1, true ]

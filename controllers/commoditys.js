@@ -148,12 +148,6 @@ class commodityCtl {
     const httpGet = async commodityArray => {
       let count = 1;
       commodityArray.forEach(async item => {
-        // dataJson.categoryId = item;
-        // let pageCount = 1;
-        // let pageNum =1
-        // for (; pageNum <= pageCount; ) {
-        // console.log("这是一次循环pageCount is", pageCount);
-        // dataJson.pageNum = pageNum++;
         await delay(1000);
         console.log(`遍历commodity----------这是第${count}遍`);
         sendAjax(item);
@@ -272,12 +266,197 @@ class commodityCtl {
   }
   async delete(ctx) {
     const commodity = await Commodity.findById(ctx.request._id);
-    if(commodity){
-      ctx.throw(404,`商品不存在`);
+    if (commodity) {
+      ctx.throw(404, `商品不存在`);
     }
     //这里应该找一个属性，保存商品的状态，不能删除，防止影响订单
     // commodity.status = false
-    ctx.statsu =204;
+    ctx.statsu = 204;
+  }
+
+  // 请求详情的接口
+  async getDetailFromOnline(ctx) {
+    const delay = time => {
+      return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+          resolve();
+        }, time);
+      });
+    };
+
+    const sendAjax = async sku => {
+      const dataJson = {
+        storeId: "15865",
+        skuId: "100929564",
+        moduleCodes: "slider,warebase,shipment,store,recommend,description",
+        longitude: 116.458083,
+        latitude: 39.996402
+      };
+      try {
+        dataJson.skuId = sku;
+        // console.log(dataJson);
+        const data = await axios.post(
+          `http://detail.dmall.com/waredetail/main`,
+          {
+            param: `${JSON.stringify(dataJson)}`,
+            source: 2
+          }
+        );
+        console.log("data.data.data  is ++++", data.data.code);
+        if (data.data.code === "0000") {
+          // console.log(data.data.data.moduleList);
+          return data.data.data.moduleList;
+        }
+        return null;
+      } catch {
+        throw new Error("请求ajax数据出错,skuId is ", dataJson.skuId);
+      }
+    };
+
+    const saveDetail = async (moduleList, sku) => {
+      try {
+        const Lists = await Commodity.findOne({ sku });
+        if (!Lists) {
+          console.log(`库里没存这一条数据${sku}`);
+          return;
+        }
+        // console.log("Lists is -----", Lists);
+        // console.log("moduleList is -------", moduleList);
+
+        moduleList.map(item => {
+          switch (item.moduleName) {
+            case "slider": {
+              // console.log(`item.data.cornerSign ++= `,item.data.cornerSign)
+              Lists.cornerSign = item.data.cornerSign || [];
+              // console.log(`Lists.cornerSign ++ =`, Lists.cornerSign)
+
+              Lists.wareImgList =
+                item.data.wareImgList ||
+                item.data.wareImgListNew.filter(item => {
+                  return item == "url";
+                });
+              // console.log('Lists.wareImgList    ',Array.isArray(Lists.wareImgList))
+              break;
+            }
+            case "warebase": {
+              Lists.brandId = item.data.brandId;
+              Lists.warebaseKeyword = item.data.keyword;
+              // console.log('Lists.brandId   ',Lists.brandId)
+              // console.log('Lists.warebaseKeyword   ',Lists.warebaseKeyword)
+              break;
+            }
+            case "shipment": {
+              Lists.shipmentTimeTip = item.data.shipmentTimeTip;
+              // console.log(`Lists.shipmentTimeTip`, Lists.shipmentTimeTip);
+              break;
+            }
+            case "store": {
+              Lists.storeName = item.data.storeName;
+              Lists.storeLogo = item.data.storeLogo;
+              // console.log(`Lists.storeName   `,Lists.storeName)
+              // console.log(`Lists.storeLogo   `,Lists.storeLogo)
+
+              break;
+            }
+            case "recommend": {
+              // console.log(
+              //   `item.data.referenceWareList   `,
+              //   item.data.referenceWareList
+              // );
+              if(!item.data.referenceWareList){
+                return;
+              }
+              const temp = item.data.referenceWareList.map(item => {
+                return item.skuId;
+              });
+              // console.log("temp----", temp);
+              Lists.referenceWareList = temp.map(async item => {
+                let id = await Commodity.findOne({ sku: item });
+                // console.log(id)
+                // console.log("反查出来的数据",await Commodity.findById(id))
+                return id;
+              });
+              Lists.referenceWareList = item.data.referenceWareList.filter(
+                item => {
+                  return item.skuId;
+                }
+              );
+              // console.log(
+              //   `Lists.referenceWareList is  -----`,
+              //   Lists.referenceWareList
+              // );
+              break;
+            }
+            case "description": {
+              console.log(item.data.description)
+              Lists.wareDetailImgList = item.data.description
+                .split('img src="')
+                .map(item => {
+                  if (item.indexOf("http") > -1) {
+                    // console.log(item.indexOf("alt"));
+                    // console.log(item.substr(0, item.indexOf("alt") - 2));
+                    return item.substr(0, item.indexOf("alt") - 2);
+                  }
+                })
+                .filter(item => {
+                  return item;
+                });
+              // console.log(`Lists.wareDetailImgList is  ++ %%%%  ++`, Lists.wareDetailImgList);
+              break;
+            }
+            default:
+              "switch出问题了";
+          }
+        });
+        try {
+          let result = await Commodity.updateOne({ _id: Lists._id }, Lists);
+          // console.log("result is ************* ", result);
+          // console
+          //   .log("更新后的lists", await Commodity.findById(Lists._id).select("brandId"))
+        } catch {
+          throw new Error("lists更新出错了");
+        }
+        // console.log(`更新后的Lists is`, Lists);
+        // 如果有重复数据，只修改第一条，其他的待会删掉，写一个方法，如果没有详情的算是无效数据，remove掉
+      } catch {
+        throw new Error(`找sku----${sku}---为的数据报错`);
+      }
+    };
+
+    const httpSend = async skuIdLists => {
+      if (!Array.isArray(skuIdLists)) {
+        skuIdLists = [].concat({ sku: skuIdLists });
+        console.log("skuIdLists is", skuIdLists);
+      }
+      skuIdLists.forEach(async item => {
+        await delay(100);
+        console.log("item.sku", item.sku);
+
+        const moduleList = await sendAjax(item.sku);
+        if (!moduleList) {
+          return;
+        }
+        // console.log("moduleList is ------", moduleList);
+        // 拿sku遍历，肯定能找到两条数据，那么我们顺便删除一条数据
+        await saveDetail(moduleList, item.sku);
+      });
+    };
+
+    // httpSend(100308803);
+
+    try {
+      const skuIdLists = await Commodity.find({});
+      if (!skuIdLists) {
+        console.log("没有数据");
+        return;
+      }
+      console.log(Array.isArray(skuIdLists));
+      // console.log(await Commodity.count());
+      // console.log(skuIdLists);
+      await httpSend(skuIdLists);
+    } catch {
+      throw new Error("什么鬼");
+    }
   }
 }
 module.exports = new commodityCtl();

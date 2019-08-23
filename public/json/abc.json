@@ -1,0 +1,65 @@
+{data [
+    { moduleName: 'slider',
+  instanceId: 2
+  tplName: 'slider-default',
+  data: { wareImgListNew: [Array
+        ],
+     cornerSign: [Array
+        ],
+     wareImgList: [Array
+        ]
+      }
+    },
+    { moduleName: 'warebase',
+  instanceId: 3,
+  tplName: 'warebase-default',
+  data: { advance: false,
+     skuId: 100929564,
+     wareId: 10907017,
+     brandId: 16265,
+     linkDesc: null,
+     wareTag: 0,
+     selledCount: null,
+     adUrl: null,
+     keyword: '自然熟,吕宋芒,不添加香精,
+        ,细腻无渣',
+     name: '[
+          2日内发货
+        ] 良品铺子菲律宾芒果干 48g'
+      }
+    },
+    { moduleName: 'shipment',
+  instanceId: 6,
+  tplName: 'shipment-default',
+  data: { shipmentTimeTip: '预计2天内发货'
+      }
+    },
+    { moduleName: 'store',
+  instanceId: 9,
+  tplName: 'store-default',
+  data: { venderBrandId: 0,
+     storeLogo:
+      'https: //img.dmallcdn.com/store/201907/3961c45e-8d5f-4f1b-b663-8e2ffea8708f',
+     venderId: 163,
+     storeId: 15865,
+     storeName: '良品铺子多点旗舰店'
+      }
+    },
+    { moduleName: 'recommend',
+  instanceId: 10,
+  tplName: 'recommend-default',
+  data: { referenceWareList: [Array
+        ]
+      }
+    },
+    { moduleName: 'description',
+  instanceId: 11,
+  tplName: 'description-default',
+  data: { descImgList: null,
+     description:
+      '<p><img src="https://img.dmallcdn.com/20190620/8f6617bc-20db-4cd5-94e5-75ba80204640" alt="" /><img src="https://img.dmallcdn.com/20190613/747ae337-9954-45af-8b54-0258c3dc2030" alt="" /><br /></p><p><img src="https://img.dmallcdn.com//20180408/38fb0f09-bd05-4302-9519-331d4dcf7752_m640" alt="" /></p>',
+     attributes: []
+      }
+    }
+  ]
+}
