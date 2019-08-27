@@ -5,7 +5,7 @@ const List = require("../models/lists");
 const searchDataUrl = "./public/searchData";
 const axios = require("axios");
 const fs = require("fs");
-
+const { delay } = require("../public/utils");
 axios.defaults.headers.post["Content-Type"] =
   "application/x-www-form-urlencoded";
 // axios.defaults.headers.get['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -46,13 +46,13 @@ class commodityCtl {
   async getFromOnline(ctx) {
     let count = 0;
     const baseUrl = `http://searchgw.dmall.com/mp/search/`;
-    const delay = time => {
-      return new Promise(function(resolve, reject) {
-        setTimeout(function() {
-          resolve();
-        }, time);
-      });
-    };
+    // const delay = time => {
+    //   return new Promise(function(resolve, reject) {
+    //     setTimeout(function() {
+    //       resolve();
+    //     }, time);
+    //   });
+    // };
     const getCommodityIdArray = async listArray => {
       const commodityArray = [];
       await listArray.forEach(async item => {
@@ -170,6 +170,7 @@ class commodityCtl {
     const { per_page = 20 } = ctx.query;
     const page = Math.max(ctx.query.page * 1, 1) - 1;
     const perPage = Math.max(per_page * 1, 1);
+    await delay(2000);
     ctx.body = await Commodity.find({ wareName: new RegExp(ctx.query.q) })
       .limit(perPage)
       .skip(page * perPage);
@@ -276,13 +277,13 @@ class commodityCtl {
 
   // 请求详情的接口
   async getDetailFromOnline(ctx) {
-    const delay = time => {
-      return new Promise(function(resolve, reject) {
-        setTimeout(function() {
-          resolve();
-        }, time);
-      });
-    };
+    // const delay = time => {
+    //   return new Promise(function(resolve, reject) {
+    //     setTimeout(function() {
+    //       resolve();
+    //     }, time);
+    //   });
+    // };
 
     const sendAjax = async sku => {
       const dataJson = {
@@ -363,7 +364,7 @@ class commodityCtl {
               //   `item.data.referenceWareList   `,
               //   item.data.referenceWareList
               // );
-              if(!item.data.referenceWareList){
+              if (!item.data.referenceWareList) {
                 return;
               }
               const temp = item.data.referenceWareList.map(item => {
@@ -388,7 +389,7 @@ class commodityCtl {
               break;
             }
             case "description": {
-              console.log(item.data.description)
+              // console.log(item.data.description)
               Lists.wareDetailImgList = item.data.description
                 .split('img src="')
                 .map(item => {

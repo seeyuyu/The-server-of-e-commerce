@@ -8,13 +8,12 @@ const {
   login,
   update,
   delete: del,
-  checkOwner,
-  
+  checkOwner
 } = require("../controllers/users");
 const { secret } = require("../config/development");
 const auth = jwt({ secret });
 // 获取用户列表
-router.get("/", auth, find);
+router.get("/", find);
 router.post("/", create);
 router.put("/:id", auth, checkOwner, update);
 router.delete("/:id", auth, checkOwner, del);

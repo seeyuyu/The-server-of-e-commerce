@@ -4,6 +4,7 @@ const jsonwebtoken = require("jsonwebtoken");
 const { secret } = require("../config/development");
 
 class UsersCtl {
+  // 中间节-用户鉴权
   async checkOwner(ctx, next) {
     if (ctx.params.id !== ctx.state.user._id) {
       ctx.throw(403, "没有权限");
@@ -11,7 +12,7 @@ class UsersCtl {
     console.log("检查通过");
     await next();
   }
-
+  // 创建用户
   async create(ctx) {
     ctx.verifyParams({
       name: { type: "string", required: true },
@@ -26,25 +27,26 @@ class UsersCtl {
     ctx.body = user;
   }
 
+  // 登录
   async login(ctx) {
-    console.log('-------------------------------login  begin')
+    console.log("-------------------------------login  begin");
     ctx.verifyParams({
       name: { type: "string", required: true },
       password: { type: "string", required: true }
     });
     const user = await User.findOne(ctx.request.body);
-    console.log(user)
+    console.log(user);
     if (!user) {
       ctx.throw(401, "用户名或密码错误");
     }
     const { _id, name } = user;
     const token = jsonwebtoken.sign({ _id, name }, secret, { expiresIn: "1d" });
     ctx.body = { token };
-    console.log('-------------------------------login  end')
-
+    console.log("-------------------------------login  end");
   }
-
+  // 查找用户
   async find(ctx) {
+    console.log('hehe');
     const { per_page = 10 } = ctx.query;
     const page = Math.max(ctx.query.page * 1, 1) - 1;
     const perPage = Math.max(per_page * 1, 1);
@@ -52,7 +54,7 @@ class UsersCtl {
       .limit(perPage)
       .skip(page * perPage);
   }
-
+  // 更新用户
   async update(ctx) {
     console.log("进入了update接口");
     ctx.verifyParams({
@@ -80,14 +82,15 @@ class UsersCtl {
     // 这里的执行顺序导致了我原来返回404，需要闹明白一点
     ctx.body = newUser;
   }
-
+  // 删除用户
   async delete(ctx) {
     const user = await User.findByIdAndRemove(ctx.params.id);
-    console.log('删除元素')
+    console.log("删除元素");
     if (!user) {
       ctx.throw(404, "用户不存在");
     }
     ctx.status = 204;
   }
+  
 }
 module.exports = new UsersCtl();
