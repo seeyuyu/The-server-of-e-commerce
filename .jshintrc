@@ -28,7 +28,7 @@
    *
    * 有时候需要判断 null，所以默认不严格要求
    */
-  "eqeqeq": true,
+  "eqeqeq": false,
   /**
    * true: 默认要求所有函数运行在ES5
    * 弃用

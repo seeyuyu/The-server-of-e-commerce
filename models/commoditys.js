@@ -109,4 +109,4 @@ const commoditySchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = model("newCommodity", commoditySchema);
+module.exports = model("NewCommodity", commoditySchema);

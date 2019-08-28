@@ -26,7 +26,7 @@ const userSchema = new Schema({
   order: {
     type: [
       {
-        order_id: { type: { type: Schema.Types.ObjectId, ref: "Order" } }
+        order_id: { type: Schema.Types.ObjectId, ref: "Order" } 
       }
     ]
   },
@@ -34,7 +34,7 @@ const userSchema = new Schema({
     type: [
       {
         commodity_id: {
-          type: { type: Schema.Types.ObjectId, ref: "Commodity" }
+          type: Schema.Types.ObjectId, ref: "NewCommodity" 
         },
         count: { type: Number, default: 0 },
         update_time: { type: String }
@@ -48,7 +48,7 @@ const userSchema = new Schema({
     type: [
       {
         commodity_id: {
-          type: { type: Schema.Types.ObjectId, ref: "Commodity" }
+          type: Schema.Types.ObjectId, ref: "NewCommodity" 
         },
         store_name: { type: String }
       }
