@@ -28,11 +28,12 @@ class ShoppingCartCtl {
     );
     const { shopping_cart } = data;
     console.log(shopping_cart);
+    console.log('ctx.request.body._id ------',ctx.request.body._id)
     for (const value of shopping_cart) {
       if (value.commodity_id == ctx.request.body._id) {
-        if(count == 1){
-          value.count ++
-        }else{
+        if (count == 1) {
+          value.count++
+        } else {
           value.count = count
         }
         isCurrent = true;
@@ -73,13 +74,14 @@ class ShoppingCartCtl {
     const { shopping_cart } = data;
     console.log(shopping_cart);
     for (const value of shopping_cart) {
-      if (value.commodity_id == ctx.request.body._id) {value.count = count
+      if (value.commodity_id == ctx.request.body._id) {
+      value.count = count
         isCurrent = true;
         console.log("找到了commodity_di，并且修改了count");
         break;
       }
     }
-
+ 
     // 如果不存在，那我们就将其push
     if (!isCurrent) {
       console.log("执行了不存在的操作");
@@ -88,7 +90,7 @@ class ShoppingCartCtl {
         count: count == 1 ? 1 : count
       });
     }
-    // data.shopping_cart = [];
+    data.shopping_cart = [];
     try {
       await User.updateOne({ _id: ctx.state.user._id }, data);
     } catch (e) {
