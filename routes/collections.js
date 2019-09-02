@@ -3,9 +3,8 @@ const router = new Router({ prefix: "/collection" });
 
 const { auth,find, delete: del } = require("../public/middlewares")
 const {
-  checkOwner,
   create,
-} = require("../controllers/collection")
+} = require("../controllers/collections")
 
 router.get("/", auth, find)
 router.post("/", auth, create);

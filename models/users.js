@@ -12,7 +12,7 @@ const userSchema = new Schema({
     default: "male"
   },
   avatar_url: { type: String },
-  locations: {
+  location: {
     type: [
       {
         province: { type: Number, default: 0 },
