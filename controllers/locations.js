@@ -1,7 +1,7 @@
 const User = require("../models/users")
 
 class LocationsCtl {
-  
+
   async create(ctx) {
     ctx.verifyParams({
       province: { type: "string", required: true },
@@ -21,6 +21,7 @@ class LocationsCtl {
     location.push({
       province, city, area, address
     })
+    
     data.location = location
     try {
       const body = await User.updateOne({ _id: ctx.state.user._id }, data);

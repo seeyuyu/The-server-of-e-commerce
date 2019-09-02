@@ -52,7 +52,7 @@ class middleware {
         data[url] = data[url].filter(list => {
           // console.log('item is ---------------------',item)
           // console.log('list.commodity_id is ------- ',list.commodity_id)
-          return item != list.commodity_id
+          return item != list._id
         })
       })
 
