@@ -36,7 +36,7 @@ const userSchema = new Schema({
         commodity_id: {
           type: Schema.Types.ObjectId, ref: "NewCommodity" 
         },
-        count: { type: Number, default: 0 },
+        amount: { type: Number, default: 0 },
         update_time: { type: String }
         //0为什么都没有，1为满38，之类的  这个属性
         // discount_type: { type: Number, enum: [0, 1, 2, 3, 4, 5], default: 0 },
