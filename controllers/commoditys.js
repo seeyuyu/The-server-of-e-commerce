@@ -167,13 +167,8 @@ class commodityCtl {
   }
 
   async find(ctx) {
-    const { per_page = 20 } = ctx.query;
-    const page = Math.max(ctx.query.page * 1, 1) - 1;
-    const perPage = Math.max(per_page * 1, 1);
     await delay(2000);
-    ctx.body = await Commodity.find({ wareName: new RegExp(ctx.query.q) })
-      .limit(perPage)
-      .skip(page * perPage);
+    ctx.body = await Commodity.findById( ctx.query.id )
   }
   // 入库以后，主键应该变为了Object-id，而不是categoryId
   async create(ctx) {

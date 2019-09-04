@@ -10,9 +10,11 @@ const Redis = require("koa-redis");
 const session = require("koa-generic-session");
 const routing = require("./routes");
 const error = require("koa-json-error");
-import dbConfig from "./dbs/config";
+// import dbConfig from "./dbs/config";
+const dbConfig = require("./dbs/config")
 const parameter = require("koa-parameter");
-import cors from "koa2-cors";
+const cors = require("koa2-cors")
+// import cors from "koa2-cors";
 // error handler
 // onerror(app);
 // app.use(cors({

@@ -1,9 +1,7 @@
 // const User = require("../models/users");
 // const { List } = require("../models/dbs")
 const List = require("../models/lists");
-
-const jsonwebtoken = require("jsonwebtoken");
-const { secret } = require("../config/development");
+const Commodity = require("../models/commoditys")
 const listData = require("../public/json/list-id239-h5.json");
 class ListCtl {
   async create(ctx) {
@@ -25,7 +23,11 @@ class ListCtl {
   }
 
   async find(ctx) {
-    const lists = await List.find({});
+    const { per_page = 20 } = ctx.query;
+    const page = Math.max(ctx.query.page * 1, 1) - 1;
+    const perPage = Math.max(per_page * 1, 1);
+    const lists = await Commodity.find({ mainSecondCmCat: ctx.query.q }).limit(perPage)
+      .skip(page * perPage);
     ctx.body = lists;
   }
 

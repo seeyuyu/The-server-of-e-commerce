@@ -1,4 +1,4 @@
-export default{
+module.exports={
   dbs:"mongodb://39.107.68.213:27000/react",
   redis:{
     get host(){
