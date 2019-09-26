@@ -14,18 +14,19 @@ const error = require("koa-json-error");
 const dbConfig = require("./dbs/config")
 const parameter = require("koa-parameter");
 const cors = require("koa2-cors")
-// import cors from "koa2-cors";
-// error handler
-// onerror(app);
-// app.use(cors({
-//   origin:'http://localhost:3001',
-//   credentials:true,
-// }))
+    // import cors from "koa2-cors";
+    // error handler
+    // onerror(app);
+    // app.use(cors({
+    //   origin:'http://localhost:3001',
+    //   credentials:true,
+    // }))
 
 console.log("123123132313");
 
-app.keys = ["syy", "keyskeys"];
+app.keys = ["syy", "keykeys"];
 app.proxy = true;
+
 // app.use(
 //   session({
 //     key: "syy",
@@ -37,27 +38,26 @@ app.proxy = true;
 
 // middlewares
 app.use(
-  bodyparser({
-    enableTypes: ["json", "form", "text"]
-  })
+    bodyparser({
+        enableTypes: ["json", "form", "text"]
+    })
 );
 
 app.use(parameter(app))
-// 配置路由登录表
+    // 配置路由登录表
 app.use(json());
 
 mongoose.connect(
-  dbConfig.dbs,
-  {
-    useNewUrlParser: true
-  },
-  err => {
-    if (err) {
-      console.log("mongodb connect error", err);
-    } else {
-      console.log("mongodb connect success ! ");
+    dbConfig.dbs, {
+        useNewUrlParser: true
+    },
+    err => {
+        if (err) {
+            console.log("mongodb connect error", err);
+        } else {
+            console.log("mongodb connect success ! ");
+        }
     }
-  }
 );
 // 处理登录相关的
 
@@ -66,17 +66,17 @@ mongoose.connect(
 app.use(logger());
 app.use(require("koa-static")(__dirname + "/public"));
 app.use(
-  views(__dirname + "/views", {
-    extension: "pug"
-  })
+    views(__dirname + "/views", {
+        extension: "pug"
+    })
 );
 
 // logger
-app.use(async (ctx, next) => {
-  const start = new Date();
-  await next();
-  const ms = new Date() - start;
-  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+app.use(async(ctx, next) => {
+    const start = new Date();
+    await next();
+    const ms = new Date() - start;
+    console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 
 // routes
@@ -84,11 +84,11 @@ routing(app);
 
 // error-handling
 app.use(
-  error({
-    postFormat: (e, { stack, ...rest }) => {
-      process.env.NODE_ENV === "production" ? rest : { stack, ...rest };
-    }
-  })
+    error({
+        postFormat: (e, { stack, ...rest }) => {
+            process.env.NODE_ENV === "production" ? rest : { stack, ...rest };
+        }
+    })
 );
 
 // app.on('error', (err, ctx) => {

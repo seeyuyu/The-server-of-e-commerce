@@ -12,6 +12,7 @@ class UsersCtl {
     console.log("检查通过");
     await next();
   }
+  
   // 创建用户
   async create(ctx) {
     ctx.verifyParams({

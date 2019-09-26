@@ -1,33 +1,56 @@
 const jwt = require("koa-jwt");
 const { secret } = require("../config/development");
 const User = require("../models/users")
+// const Commodity = require("../models/commoditys");
+const Commodity = require("../models/commoditys");
 class middleware {
   constructor() {
     this.auth = jwt({ secret });
   }
-  // 给collect和收藏夹准备的，公共的find和delete方法 ----start
-  async find(ctx) {
+  // 给collect和购物车 准备的，公共的find和delete方法 ----start
+  async find (ctx) {
+    console.log('ctx.request.header is ---------------------')
+
+    console.log(ctx.request.header)
     console.log('我是中间件')
     let url = ctx.request.url.substr(1)
     if (url == "collection") {
       url = 'collect'
     }
     url = url.replace('-', '_')
-    console.log(url)
+    console.log('url is', url)
     // console.log(ctx.state);
     const data = await User.findById(ctx.state.user._id).select(
       url
-    );
-    console.log("data is -----", data);
-    ctx.body = {
-      code: 0,
-      data: data[url],
-      message: "success"
-    };
+    )
+    console.log("data.url is -----", data[url]);
+    // console.log("data.url is -----", data.url);
+    let response = await data[url].forEach(async item => {
+      console.log('_id', item.commodity_id)
+      const oneData = await Commodity.findById(item.commodity_id)
+      console.log('oneData is', oneData)
+      return '123'
+      // await Commodity.findById( ctx.query.id )
+    })
+
+    console.log("response is -----", response);
+
+    // ctx.body = {
+    //   code: 0,
+    //   data: data[url],
+    //   message: "success"
+    // };
+    ctx.body = data[url]
+    // ctx.body=response
+
+  }
+  listToPromise (arr) {
+    return new Promise((resolve, reject) => {
+      
+    })
   }
 
-
-  async delete(ctx) {
+  async delete (ctx) {
 
     // let arr = /^\/\S+\/$/.match(ctx.request.url)
 
