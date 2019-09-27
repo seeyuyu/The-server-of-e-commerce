@@ -15,4 +15,8 @@ router.post("/", auth, create);
 // 购物车删除某条属性
 // 批量删除有两种方法：1、url上用逗号分隔开，2、先post传递过去，在delete
 router.delete("/:id", auth, del);
+ 
+
+
+
 module.exports = router;
