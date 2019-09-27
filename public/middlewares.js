@@ -25,13 +25,27 @@ class middleware {
     )
     console.log("data.url is -----", data[url]);
     // console.log("data.url is -----", data.url);
-    let response = await data[url].forEach(async item => {
-      console.log('_id', item.commodity_id)
-      const oneData = await Commodity.findById(item.commodity_id)
-      console.log('oneData is', oneData)
-      return '123'
-      // await Commodity.findById( ctx.query.id )
-    })
+    let response =[]
+    for(let item of data[url]){
+      console.log('before item  is ',   item)
+      let value = await Commodity.findById(item.commodity_id) 
+      const {mainSecondCmCat,wareId } = value
+      const temp ={ mainSecondCmCat,wareId}
+      console.log('temp is ',temp)
+      let tempitem =  Object.assign(item, temp)
+      console.log( 'after  item is ',tempitem)
+      console.log( 'after  item.amount is ',item.amount)
+
+      // response.push( await Commodity.findById(item.commodity_id))
+    }
+
+    // let response = await data[url].forEach(async item => {
+    //   console.log('_id', item.commodity_id)
+    //   const oneData = await Commodity.findById(item.commodity_id)
+    //   console.log('oneData is', oneData)
+    //   return '123'
+    //   // await Commodity.findById( ctx.query.id )
+    // })
 
     console.log("response is -----", response);
 
