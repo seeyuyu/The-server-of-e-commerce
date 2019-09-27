@@ -7,62 +7,35 @@ class middleware {
   constructor() {
     this.auth = jwt({ secret });
   }
+
   // 给collect和购物车 准备的，公共的find和delete方法 ----start
   async find (ctx) {
-    console.log('ctx.request.header is ---------------------')
-
-    console.log(ctx.request.header)
     console.log('我是中间件')
     let url = ctx.request.url.substr(1)
+    url = url.replace('-', '_')
     if (url == "collection") {
       url = 'collect'
     }
-    url = url.replace('-', '_')
-    console.log('url is', url)
-    // console.log(ctx.state);
-    const data = await User.findById(ctx.state.user._id).select(
-      url
-    )
-    console.log("data.url is -----", data[url]);
-    // console.log("data.url is -----", data.url);
-    let response =[]
-    for(let item of data[url]){
-      console.log('before item  is ',   item)
-      let value = await Commodity.findById(item.commodity_id) 
-      const {mainSecondCmCat,wareId } = value
-      const temp ={ mainSecondCmCat,wareId}
-      console.log('temp is ',temp)
-      let tempitem =  Object.assign(item, temp)
-      console.log( 'after  item is ',tempitem)
-      console.log( 'after  item.amount is ',item.amount)
-
-      // response.push( await Commodity.findById(item.commodity_id))
+  
+    const data = await User.findById(ctx.state.user._id).select(url)
+    // console.log("data.url is -----", data[url]);
+    // 用来保存要返回的值
+    let response = []
+    for (let item of data[url]) {
+      console.log('before item  is ', item)
+      let value = await Commodity.findById(item.commodity_id)
+      const { mainSecondCmCat, sku, wareId, wareImg, wareName, warePrice, _id } = value
+      console.log('value is', value)
+      const { amount, } = item
+      const arr = {
+        _id, mainSecondCmCat, sku, wareId, wareImg, wareName, warePrice, amount,
+      }
+      response.push(arr)
     }
-
-    // let response = await data[url].forEach(async item => {
-    //   console.log('_id', item.commodity_id)
-    //   const oneData = await Commodity.findById(item.commodity_id)
-    //   console.log('oneData is', oneData)
-    //   return '123'
-    //   // await Commodity.findById( ctx.query.id )
-    // })
-
     console.log("response is -----", response);
-
-    // ctx.body = {
-    //   code: 0,
-    //   data: data[url],
-    //   message: "success"
-    // };
-    ctx.body = data[url]
-    // ctx.body=response
-
+    ctx.body = response
   }
-  listToPromise (arr) {
-    return new Promise((resolve, reject) => {
-      
-    })
-  }
+
 
   async delete (ctx) {
 

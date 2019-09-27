@@ -1,7 +1,8 @@
 const User = require("../models/users");
+const Commodity = require("../models/commoditys")
 
 class CollectionCtl {
-  
+
   async create(ctx) {
     let isCurrent = false;
     ctx.verifyParams({

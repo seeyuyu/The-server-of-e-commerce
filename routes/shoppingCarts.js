@@ -3,7 +3,7 @@ const router = new Router({ prefix: "/shopping-cart" });
 const { auth,find, delete: del } = require("../public/middlewares")
 
 const {
-  create,
+  create
   // updata,
 } = require("../controllers/shoppingCart");
 // 查看所有

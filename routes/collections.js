@@ -1,9 +1,9 @@
 const Router = require("koa-router");
 const router = new Router({ prefix: "/collection" });
 
-const { auth,find, delete: del } = require("../public/middlewares")
+const { auth, find, delete: del } = require("../public/middlewares")
 const {
-  create,
+  create
 } = require("../controllers/collections")
 
 router.get("/", auth, find)

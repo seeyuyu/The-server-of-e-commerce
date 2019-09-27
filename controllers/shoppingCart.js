@@ -1,9 +1,9 @@
 const User = require("../models/users");
+const Commodity = require("../models/commoditys");
 class ShoppingCartCtl {
   // 查看购物车
 
-
-  async create(ctx) {
+  async create (ctx) {
     let isCurrent = false;
     ctx.verifyParams({
       count: { type: "string", required: false },
