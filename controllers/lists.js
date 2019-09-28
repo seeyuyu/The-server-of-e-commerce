@@ -23,12 +23,15 @@ class ListCtl {
   }
 
   async find(ctx) {
-    const { per_page = 20 } = ctx.query;
+    const { per_page = 20} = ctx.query;
+    console.log('进入了查询接口')
     const page = Math.max(ctx.query.page * 1, 1) - 1;
     const perPage = Math.max(per_page * 1, 1);
     const lists = await Commodity.find({ mainSecondCmCat: ctx.query.q }).limit(perPage)
       .skip(page * perPage);
-    ctx.body = lists;
+    const pagesAmount = await Commodity.find({ mainSecondCmCat: ctx.query.q })
+    // console.log('pagesAmount is ',pagesAmount.length)
+    ctx.body = { lists ,total:pagesAmount.length,currentIndex:page};
   }
 
   async delete(ctx) {
