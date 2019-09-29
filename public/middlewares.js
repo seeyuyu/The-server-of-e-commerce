@@ -81,6 +81,14 @@ class middleware {
 
   }
   // 给collect和收藏夹准备的，公共的find和delete方法 ----end
-
+  async checkCommodity(ctx,next){
+    const data = await Commodity.findById(ctx.request.body._id)
+    if(data){
+      console.log('data is ',data)
+      await next()
+    }else{
+      ctx.throw(404,'商品不存在') 
+    }
+  }
 }
 module.exports = new middleware();

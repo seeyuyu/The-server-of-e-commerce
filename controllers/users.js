@@ -45,6 +45,7 @@ class UsersCtl {
     ctx.body = { token };
     console.log("-------------------------------login  end");
   }
+
   // 查找用户
   async find(ctx) {
     console.log('hehe');
@@ -55,6 +56,7 @@ class UsersCtl {
       .limit(perPage)
       .skip(page * perPage);
   }
+
   // 更新用户
   async update(ctx) {
     console.log("进入了update接口");
@@ -83,6 +85,7 @@ class UsersCtl {
     // 这里的执行顺序导致了我原来返回404，需要闹明白一点
     ctx.body = newUser;
   }
+  
   // 删除用户
   async delete(ctx) {
     const user = await User.findByIdAndRemove(ctx.params.id);

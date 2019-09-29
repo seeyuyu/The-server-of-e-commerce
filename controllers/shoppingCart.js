@@ -3,15 +3,16 @@ const Commodity = require("../models/commoditys");
 class ShoppingCartCtl {
   // 查看购物车
 
+
   async create (ctx) {
     let isCurrent = false;
     ctx.verifyParams({
-      count: { type: "string", required: false },
+      amount: { type: "string", required: false },
       _id: { type: "string", required: true }
     });
     console.log("ctx.request.body", ctx.request.body);
 
-    const { count = 1 } = ctx.request.body;
+    const { amount = 1 } = ctx.request.body;
     const data = await User.findById(ctx.state.user._id).select(
       "shopping_cart"
     );
@@ -20,13 +21,14 @@ class ShoppingCartCtl {
     console.log('ctx.request.body._id ------', ctx.request.body._id)
     for (const value of shopping_cart) {
       if (value.commodity_id == ctx.request.body._id) {
-        if (count == 1) {
-          value.count++
+        if (amount == 1) {
+          value.amount++
         } else {
-          value.count = count
+          value.amount = amount
         }
         isCurrent = true;
-        console.log("找到了commodity_di，并且修改了count");
+        console.log('value is',value)
+        console.log("找到了commodity_di，并且修改了amount");
         break;
       }
     }
@@ -36,7 +38,7 @@ class ShoppingCartCtl {
       console.log("执行了不存在的操作");
       shopping_cart.push({
         commodity_id: ctx.request.body._id,
-        count: count == 1 ? 1 : count
+        amount: amount == 1 ? 1 : amount
       });
     }
     // data.shopping_cart = [];
